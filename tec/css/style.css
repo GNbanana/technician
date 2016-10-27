@@ -3,57 +3,22 @@
     padding: 0;
 }
 
-body {
+body,.search_box,.list_head ,tech_list{
     background-color: #e1e0e0;
 }
 
-.contect {
-    background: #e1e0e0;
-    padding: 0;
-    margin: 0;
-}
-
-.contect_banner {
-    text-align: center;
-    min-width: 350px;
-    position: relative;
-}
-
-.contect_banner img {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.contect_banner p {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 55px;
-    width: 360px;
-    margin-left: -180px;
-    margin-top: -70px;
-    line-height: 55px;
-    color: white;
-    font-size: 1.6em;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    font-family: "Adobe 黑体 Std R";
-    border: white solid 5px;
-}
-
-.top_image {
-    width: 100%;
-    height: auto;
-    position: relative;
-}
-
 #top_image1 {
-    width: 100%;
+    position: fixed;
+    z-index: -100;
 }
 
-.top_image > div {
+.top_image_div {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+}
+
+.top_image_div > div {
     position: absolute;
     color: white;
     z-index: 100;
@@ -154,42 +119,42 @@ body {
     overflow: hidden;
 }
 
-.list_content_inner{
+.list_content_inner {
 
 }
 
-.list_content_inner>div{
-    width:170px;
-    height:220px;
-    margin:25px;
+.list_content_inner > div {
+    width: 170px;
+    height: 220px;
+    margin: 25px;
     float: left;
     background-color: #dcdbd6;
     position: relative;
-    -webkit-box-shadow:2px 1px 4px #cbcaca,-0.5px -0.5px 2px #cbcaca;
-    -moz-box-shadow: 2px 1px 4px #cbcaca,-0.5px -0.5px 2px #cbcaca;
-    box-shadow:2px 1px 4px #cbcaca,-0.5px -0.5px 2px #cbcaca;
- }
-
-.list_content_inner>div .person_name{
-    width:30px;
-    font-size: 23px;
-    line-height: 25px;
-    font-weight:900;
-    margin:50px auto 0;
+    -webkit-box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
+    -moz-box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
+    box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
 }
 
-.list_content_inner>div .person_year{
-    width:100px;
+.list_content_inner > div .person_name {
+    width: 30px;
+    font-size: 23px;
+    line-height: 25px;
+    font-weight: 900;
+    margin: 50px auto 0;
+}
+
+.list_content_inner > div .person_year {
+    width: 100px;
     bottom: 10px;
     text-align: center;
     font-size: 23px;
     font-weight: 600;
     position: absolute;
-    left:50%;
-    color:#d0cfc5;
+    left: 50%;
+    color: #d0cfc5;
     letter-spacing: 1px;
     transform: translateX(-50px);
-    bottom:20px;
+    bottom: 20px;
 
 }
 
@@ -216,27 +181,30 @@ body {
     /*-moz-box-shadow:  */
 }
 
-.list_right .right_roll_bottom{
+.list_right .right_roll_bottom {
     -webkit-box-shadow: 0.5px 3px 2px 0 #c9c9c9;
-    -moz-box-shadow:0.5px 3px 2px 0 #c9c9c9;
-    box-shadow:0.5px 3px 2px 0 #c9c9c9;
+    -moz-box-shadow: 0.5px 3px 2px 0 #c9c9c9;
+    box-shadow: 0.5px 3px 2px 0 #c9c9c9;
 }
-.list_left .left_roll_bottom{
+
+.list_left .left_roll_bottom {
     -webkit-box-shadow: -3px -0.5px 2px 0 #c9c9c9;
-    -moz-box-shadow:-3px -0.5px 2px 0 #c9c9c9;
-    box-shadow:-3px -0.5px 2px 0 #c9c9c9;
+    -moz-box-shadow: -3px -0.5px 2px 0 #c9c9c9;
+    box-shadow: -3px -0.5px 2px 0 #c9c9c9;
 }
 
 .list_left .left_roll_top {
     -webkit-box-shadow: inset 1px 1px 2px 0px #cfcfcf;
     -moz-box-shadow: inset 1px 1px 2px 0px #cfcfcf;
-    box-shadow:inset 1px 1px 2px 0px #cfcfcf;
+    box-shadow: inset 1px 1px 2px 0px #cfcfcf;
 }
-.list_right .right_roll_top{
+
+.list_right .right_roll_top {
     -webkit-box-shadow: inset -1px -1px 2px 0px #cfcfcf;
     -moz-box-shadow: inset -1px -1px 2px 0px #cfcfcf;
-    box-shadow:inset -1px -1px 2px 0px #cfcfcf;
+    box-shadow: inset -1px -1px 2px 0px #cfcfcf;
 }
+
 .list_left .left_roll_top {
     background-color: #e1e0e0;
     border-top-left-radius: 100px;
@@ -245,6 +213,44 @@ body {
 .list_right .right_roll_top {
     background-color: #e1e0e0;
     border-bottom-right-radius: 100px
+}
+
+/*巩娜部分代码*/
+
+.contect {
+    background: #e1e0e0;
+    padding: 0;
+    margin: 0;
+}
+
+.contect_banner {
+    text-align: center;
+    min-width: 350px;
+    position: relative;
+}
+
+.contect_banner img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contect_banner p {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 55px;
+    width: 360px;
+    margin-left: -180px;
+    margin-top: -70px;
+    line-height: 55px;
+    color: white;
+    font-size: 1.6em;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    font-family: "Adobe 黑体 Std R";
+    border: white solid 5px;
 }
 
 .pics {
