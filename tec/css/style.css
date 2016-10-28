@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body,.search_box,.list_head ,tech_list{
+body{
     background-color: #e1e0e0;
 }
 
@@ -120,10 +120,12 @@ body,.search_box,.list_head ,tech_list{
 }
 
 .list_content_inner {
-
+    height:100%;
+    width:100%;
+    margin:0 auto;
 }
 
-.list_content_inner > div {
+.list_content_info{
     width: 170px;
     height: 220px;
     margin: 25px;
@@ -135,22 +137,39 @@ body,.search_box,.list_head ,tech_list{
     box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
 }
 
-.list_content_inner > div .person_name {
+.list_content_info .person_img{
+    width:170px;
+    height:105px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.list_content_info .person_img img{
+    width:170px;
+    height:105px;
+    position: relative;
+    top:-105px;
+}
+
+.list_content_info .person_name {
     width: 30px;
     font-size: 23px;
     line-height: 25px;
     font-weight: 900;
     margin: 50px auto 0;
+    position: relative;
+    z-index:10;
+    top:15px;
 }
 
-.list_content_inner > div .person_year {
+.list_content_info .person_year {
     width: 100px;
     bottom: 10px;
     text-align: center;
     font-size: 23px;
     font-weight: 600;
     position: absolute;
-    left: 50%;
+    left: 48%;
     color: #d0cfc5;
     letter-spacing: 1px;
     transform: translateX(-50px);
