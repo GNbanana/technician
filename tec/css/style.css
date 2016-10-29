@@ -160,6 +160,11 @@ body{
     position: relative;
     z-index:10;
     top:15px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .list_content_info .person_year {
@@ -234,27 +239,51 @@ body{
     border-bottom-right-radius: 100px
 }
 
+.list_content_info:hover .person_name{
+    top:75px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.list_content_info img{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.list_content_info:hover img{
+    top:0px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
 /*巩娜部分代码*/
 
-.contect {
+
+.contect{
     background: #e1e0e0;
     padding: 0;
     margin: 0;
 }
 
-.contect_banner {
+.contect_banner{
     text-align: center;
     min-width: 350px;
     position: relative;
 }
 
-.contect_banner img {
+.contect_banner img{
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
-.contect_banner p {
+.contect_banner p{
     display: block;
     position: absolute;
     top: 50%;
@@ -263,7 +292,7 @@ body{
     width: 360px;
     margin-left: -180px;
     margin-top: -70px;
-    line-height: 55px;
+    line-height: 50px;
     color: white;
     font-size: 1.6em;
     font-weight: 600;
@@ -272,39 +301,55 @@ body{
     border: white solid 5px;
 }
 
-.pics {
+.photo{
+    width: 100%;
+    margin-top: -50px;
+    overflow: hidden;
+}
+
+
+.tagContent{
     background: black;
     width: 100%;
     height: auto;
-    margin-top: -50px;
-    padding-top: 150px;
+    padding-top: 200px;
     padding-bottom: 200px;
+    display: none;
 }
 
-.pics_container {
+#tagContent div.selectTag {
+    display: block;
+}
+
+#tags li.selectTag {
+    position: relative;
+}
+
+.pics_container{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.pics_container span {
+.pics_container span{
     display: inline-block;
     vertical-align: top;
 }
 
-.pics_container a {
+.pics_container a{
     display: block;
 
     text-decoration: none;
 }
 
-.loadmore {
+.loadmore{
     width: 100%;
     height: 360px;
     position: relative;
+    background: #e1e0e0;
 }
 
-.load_button {
+.load_button{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -312,61 +357,109 @@ body{
     margin-left: -150px;
     height: 70px;
     width: 300px;
+    line-height: 70px;
     background: chocolate;
     color: white;
-    box-shadow: 1px 1px 10px 0 #ccc;
+    box-shadow:1px 1px 10px 0 #ccc;
     border: none;
     letter-spacing: 0.2em;
     font-size: 1.4em;
     font-weight: 600;
-    font-family: "Microsoft JhengHei Light";
+    font-family: "Microsoft JhengHei Light" ;
+    cursor: pointer;
+    text-align: center;
+}
+.morepics{
+    display: none;
+}
+.none{
+    display:none;
+    width: 100%;
 }
 
-.footer {
+.contentid{
+    clear: both;
+    width: 100%;
+    background: #000 ;
+}
+
+.yearslist{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.yearslist ul{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yearslist li{
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.yearslist a{
+    line-height: 40px;
+    color: #000;
+    font-size: 20px;
+}
+
+.line{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 90%;
+    height: 2px;
+    background: #000;
+}
+
+
+.footer{
     width: 100%;
     height: 300px;
     background: black;
     text-align: center;
 }
 
-.footer_back {
+.footer_back{
     width: 150px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;
 }
 
-.footer_back p {
+.footer_back p{
     margin-top: 30px;
     letter-spacing: 0.5em;
     color: #ccc;
 }
 
-@media screen and (max-width: 1024px) {
-    .contect_banner p {
+@media screen and (max-width: 1024px){
+    .contect_banner p{
         width: 300px;
         margin-left: -150px;
     }
-
-    .load_button {
+    .load_button{
         margin-top: -30px;
         margin-left: -120px;
         height: 60px;
+        line-height: 60px;
         width: 240px;
         font-size: 1.2em;
     }
-
-    .loadmore {
+    .loadmore{
         height: 320px;
     }
-
-    .footer_back {
+    .footer_back{
         padding-top: 40px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .contect_banner p {
+@media screen and (max-width: 768px){
+    .contect_banner p{
         width: 240px;
         height: 46px;
         margin-left: -120px;
@@ -376,31 +469,43 @@ body{
         letter-spacing: 0.2em;
         border: white solid 4px;
     }
-
-    .load_button {
+    .load_button{
         margin-top: -25px;
         margin-left: -110px;
         height: 50px;
+        line-height: 50px;
         width: 220px;
         font-size: 1.0em;
     }
-
-    .loadmore {
+    .loadmore{
         height: 280px;
     }
 
-    .footer {
-        height: 260px;
+    .yearslist{
+        height: 35px;
     }
 
-    .footer_back img {
+    .yearslist li{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .yearslist a{
+        line-height: 35px;
+        font-size: 18px;
+    }
+
+    .footer{
+        height: 260px;
+    }
+    .footer_back img{
         width: 100px;
         height: 100px;
     }
 }
 
-@media screen and (max-width: 520px) {
-    .contect_banner p {
+@media screen and (max-width: 520px){
+    .contect_banner p{
         width: 200px;
         height: 40px;
         margin-top: -20px;
@@ -410,34 +515,43 @@ body{
         letter-spacing: 0.1em;
         border: white solid 3px;
     }
-
-    .load_button {
+    .load_button{
         margin-top: -20px;
         margin-left: -100px;
         height: 40px;
+        line-height: 40px;
         width: 200px;
         letter-spacing: 0.1em;
         font-size: 0.8em;
     }
-
-    .loadmore {
+    .loadmore{
         height: 220px;
     }
 
-    .footer {
+    .yearslist{
+        height: 30px;
+    }
+
+    .yearslist li{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .yearslist a{
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .footer{
         height: 200px;
     }
-
-    .footer_back {
+    .footer_back{
         padding-top: 30px;
     }
-
-    .footer_back img {
+    .footer_back img{
         width: 80px;
         height: 80px;
     }
-
-    .footer_back p {
+    .footer_back p{
         margin-top: 20px;
         letter-spacing: 0.3em;
         font-size: 0.8em;
@@ -445,8 +559,9 @@ body{
     }
 }
 
-@media screen and (max-width: 320px) {
-    .contect_banner p {
+
+@media screen and (max-width: 320px){
+    .contect_banner p{
         width: 120px;
         height: 26px;
         margin-left: -60px;
@@ -456,34 +571,30 @@ body{
         letter-spacing: 0.1em;
         border: white solid 2px;
     }
-
-    .load_button {
+    .load_button{
         margin-top: -15px;
         margin-left: -70px;
         height: 30px;
+        line-height: 30px;
         width: 140px;
         letter-spacing: 0.1em;
         font-size: 0.6em;
     }
-
-    .loadmore {
+    .loadmore{
         height: 150px;
     }
 
-    .footer {
+    .footer{
         height: 150px;
     }
-
-    .footer_back {
+    .footer_back{
         padding-top: 30px;
     }
-
-    .footer_back img {
+    .footer_back img{
         width: 50px;
         height: 50px;
     }
-
-    .footer_back p {
+    .footer_back p{
         margin-top: 20px;
         letter-spacing: 0.2em;
         font-size: 0.6em;
@@ -491,3 +602,130 @@ body{
     }
 }
 
+/*大定部分代码，全屏的技术员信息页*/
+
+.full_screen_techinfo{
+    position: fixed;
+    opacity: 0;
+    display: none;
+    top:0px;
+    left:0px;
+    z-index: 100;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.7);
+}
+.close_full_screen{
+    position: absolute;
+    top:20px;
+    right:20px;
+    width:45px;
+    height:45px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.close_full_screen div:nth-child(1),.close_full_screen div:nth-child(2){
+    background-color: white;
+    position: absolute;
+}
+.close_full_screen div:nth-child(1){
+    width:0px;
+    height:2px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+    top:0px;
+    left:0px;
+}
+.close_full_screen div:nth-child(2){
+    width:2px;
+    height:0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+    top:0px;
+    right:0px;
+}
+.full_screen_content{
+    height:520px;
+    width:820px;
+    margin:0 auto;
+    position: relative;
+    top:50%;
+    -webkit-transform: translateY(-260px);
+    -moz-transform: translateY(-260px);
+    -ms-transform: translateY(-260px);
+    -o-transform: translateY(-260px);
+    transform: translateY(-260px);
+}
+.full_screen_content>div{
+    width:50%;
+    height:100%;
+    float: left;
+    background-color: #e4dcc8;
+    overflow: hidden;
+}
+.full_screen_left img{
+    width:100%;
+    height:100%;
+    position: relative;
+    left:-100%;
+}
+.full_screen_right{
+    width:100%;
+    height:100%;
+}
+.full_screen_right_content{
+    height:75%;
+    width:70%;
+    margin:20% auto 0;
+}
+.full_screen_tech_info{
+    height:15%;
+    width:100%;
+}
+.full_screen_tech_info p:nth-child(1) {
+    position: relative;
+    top:-3px;
+    /*top:0px;*/
+    font-size: 25px;
+    font-weight: 800;
+}
+.full_screen_tech_info p:nth-child(2) {
+    position: relative;
+    top:-3px;
+    /*top:0px;*/
+    font-size: 15px;
+    line-height: 22px;
+}
+.full_screen_mote{
+    height: 67%;
+    position: relative;
+}
+.full_screen_mote span{
+    height:auto;
+    position: absolute;
+    bottom: 5px;
+    line-height: 20px;
+    font-size: 16px;
+}
+.full_screen_teacher {
+    height:5%;
+    margin:20% 0 0;
+}
+.full_screen_teacher span{
+    font-size: 15px;
+    position: relative;
+    top:-3px;
+}
+
+.full_screen_teacher span:nth-child(2){
+    color:#1155cc;
+    cursor: pointer;
+}
