@@ -10,6 +10,7 @@ body{
 #top_image1 {
     position: fixed;
     z-index: -100;
+    width:100%;
 }
 
 .top_image_div {
@@ -728,4 +729,41 @@ body{
 .full_screen_teacher span:nth-child(2){
     color:#1155cc;
     cursor: pointer;
+}
+
+@media screen and (max-width:700px) {
+    .top_image_span1 {
+        top: 5.4%;
+        font-size: 1.8em;
+        height: 45px;
+    }
+    .top_image_span2{
+        width: 340px;
+        top: 25%;
+    }
+    .search_box {
+        height: 195px;
+    }
+    .search_box input {
+        top: 40%;
+    }
+    .list_head {
+        height: 300px;
+    }
+    .list_head .feiyang_icon {
+        width: 195px;
+        height: auto;
+    }
+}
+@media screen and (max-width:450px) {
+    .top_image_span1 {
+        top: 10.4%;
+        font-size: 2.05em;
+        letter-spacing: 5px;
+        height: 60px;
+    }
+    .top_image_span2{
+        width: 240px;
+        top:30%;
+    }
 }

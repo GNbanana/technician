@@ -5,36 +5,52 @@ $(function () {
     /*获取电脑屏幕的宽度和高度 */
     var window_width = $(window).width();
     var window_height = $(window).height();
-    /*设置背景图片的高度和宽度*/
-    /*此处还需再次处理*/
-    var $top_image = $("#top_image1");  //顶部置于底层的图片
-    $top_image.height(window_height).width(window_width);
-    $(".top_image_div ").height(window_height);
+    var $top_image = $("#top_image1");  //顶部置于底层的图片对象
+    /*开启页面是就初始化顶部的图片*/
+    if( window_width > 700){
+        $("#top_image1").attr("src","images/Header_image_1_for_pc.jpg");
+        $top_image.height(window_width*(1025/2080));
+    }
+    if(window_width <= 700 && window_width > 450){
+        $("#top_image1").attr("src","images/Header_image_1_for_pad.jpg");
+        $top_image.height(window_width*(1175/2048));
+    }
+    if(window_width <= 450 ){
+        $("#top_image1").attr("src","images/Header_image_1_for_phone.jpg");
+        $top_image.height(window_width*(2208/1242));
+    }
+
+    var top_image_height = $top_image.height();
+    $(".top_image_div ").height(top_image_height);
 
 
     /*调用函数对技术员列表重新排版*/
     technicianListCenter();   //直接在dom加载完毕后调用函数使技术员页面居中
-    $(window).resize(function () {    //再屏幕分辨率改变时调用函数使技术员页面居中
-        technicianListCenter();
+    $(window).resize(function () {
+        var window_width = $(window).width();
+        var window_height = $(window).height();
+        console.log(window_width+"\t"+window_height);
+        technicianListCenter();         //在屏幕分辨率改变时调用函数使技术员页面居中
+        flashTopCover();                //在屏幕分辨率调试刷新顶部的效果
+
+        if( window_width > 700){
+            $("#top_image1").attr("src","images/Header_image_1_for_pc.jpg");
+            $top_image.height(window_width*(1025/2080));
+        }
+        if(window_width <= 700 && window_width > 450){
+            $("#top_image1").attr("src","images/Header_image_1_for_pad.jpg");
+            $top_image.height(window_width*(1175/2048));
+        }
+        if(window_width <= 450 ){
+            $("#top_image1").attr("src","images/Header_image_1_for_phone.jpg");
+            $top_image.height(window_width*(2208/1242));
+        }
+
+        var top_image_height = $top_image.height();
+        $(".top_image_div ").height(top_image_height);
     });
     /*鼠标单击技术员列表的动画*/
     $(".list_content_info").click(function () {
-        //// 打开全屏后就禁止屏幕滚动
-        //var scroll_top = $(window).scrollTop();
-        //$(window).scroll(function () {
-        //    $(window).scrollTop(scroll_top);
-        //})
-
-        /*鼠标移动到技术员列表上的动画*/
-        //$(".list_content_info").hover(function () {
-        //    $(this).stop(true)
-        //        .children(".person_name").animate({top: "75px"}, "swing").end()
-        //        .find("img").animate({top: "0px"}, "swing");
-        //}, function () {
-        //    $(this).stop(true)
-        //        .children(".person_name").animate({top: "15px"}, "swing").end()
-        //        .find("img").animate({top: "-105px"}, "swing");
-        //});
         $(".full_screen_techinfo").css("display", "block").animate({opacity: "1"}, 500)/*控制全屏的出现*/
             .delay(500)
             .find("img").animate({left: "0"}, 500).end();
@@ -51,6 +67,9 @@ $(function () {
         $(".full_screen_techinfo").animate({opacity: "0"}, 500, function () {
             $(this).css("display", "none");
         })
+        /**/
+        $('.close_full_screen div:nth-child(1)').animate({width: "0px"},500);
+        $('.close_full_screen div:nth-child(2)').animate({height: "0px"},500);
     })
     /*当按键盘esc时退出全屏*/
     $(window).keydown(function (e) {
@@ -58,6 +77,12 @@ $(function () {
             $(".close_full_screen").trigger("click");
     })
 })
+/*改变屏幕大小时，重新刷新顶部的效果*/
+function flashTopCover(){
+    var $top_image = $("#top_image1");  //顶部置于底层的图片对象
+    var top_image_height = $top_image.height();
+    $(".top_image_div ").height(top_image_height);
+}
 
 /*调整技术员页面居中的函数*/
 function technicianListCenter() {
