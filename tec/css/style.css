@@ -193,11 +193,11 @@ body{
 }
 
 .list_left > div {
-    right: 0px;
+    left: 15px;
 }
 
 .list_right > div {
-    left: 0px;
+    right: 15px;
 }
 
 .list_left .left_roll_bottom, .list_right .right_roll_bottom {
@@ -753,6 +753,13 @@ body{
     .list_head .feiyang_icon {
         width: 195px;
         height: auto;
+    }
+    /*滚动按钮重新定位*/
+    .tech_list > div{
+        float: inherit;
+    }
+    .tech_list .list_left, .tech_list .list_right{
+        height:9%;
     }
 }
 @media screen and (max-width:450px) {
