@@ -758,8 +758,16 @@ body{
     .tech_list > div{
         float: inherit;
     }
+    .tech_list .list_content {
+        margin: 0 auto;
+    }
     .tech_list .list_left, .tech_list .list_right{
         height:9%;
+        position: relative;
+        left: 50%;
+    }
+    .list_left > div, .list_right > div {
+        transform: translateX(-45px) rotate(45deg);
     }
 }
 @media screen and (max-width:450px) {

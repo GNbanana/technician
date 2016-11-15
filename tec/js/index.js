@@ -31,6 +31,8 @@ $(function () {
         var window_height = $(window).height();
         console.log(window_width+"\t"+window_height);
         technicianListCenter();         //在屏幕分辨率改变时调用函数使技术员页面居中
+
+        /*刷新頂部的效果*/
         flashTopCover();                //在屏幕分辨率调试刷新顶部的效果
 
         if( window_width > 700){
@@ -86,12 +88,14 @@ function flashTopCover(){
 
 /*调整技术员页面居中的函数*/
 function technicianListCenter() {
-    var $technician_list = $(".list_content_inner>div");
-    var $technician_list_container = $(".list_content");
-    var technician_width = $technician_list.width() + parseInt($technician_list.css("margin-left")) + parseInt($technician_list.css("margin-right"));//单个技术员部分所占据的宽度
-    var technician_container_width = $technician_list_container.width();
-    var row_list_number = Math.floor(technician_container_width / technician_width);
-    $(".list_content_inner").width(row_list_number * technician_width);
+    if($(window).width() > 700){
+        var $technician_list = $(".list_content_inner>div");
+        var $technician_list_container = $(".list_content");
+        var technician_width = $technician_list.width() + parseInt($technician_list.css("margin-left")) + parseInt($technician_list.css("margin-right"));//单个技术员部分所占据的宽度
+        var technician_container_width = $technician_list_container.width();
+        var row_list_number = Math.floor(technician_container_width / technician_width);
+        $(".list_content_inner").width(row_list_number * technician_width);
+    }
 };
 /*点击列表左右部分上下滑动的函数.status表示往上滑动还是往下滑动*/
 function technicianListScroll(status) {
