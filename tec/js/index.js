@@ -11,11 +11,11 @@ $(function () {
         $("#top_image1").attr("src", "images/Header_image_1_for_pc.jpg");
         $top_image.height(window_width * (1025 / 2080));
     }
-    if (window_width <= 700 && window_width > 450) {
+    if (window_width <= 700 && window_width > 433) {
         $("#top_image1").attr("src", "images/Header_image_1_for_pad.jpg");
         $top_image.height(window_width * (1175 / 2048));
     }
-    if (window_width <= 450) {
+    if (window_width <= 433) {
         $("#top_image1").attr("src", "images/Header_image_1_for_phone.jpg");
         $top_image.height(window_width * (2208 / 1242));
     }
@@ -39,11 +39,11 @@ $(function () {
             $("#top_image1").attr("src", "images/Header_image_1_for_pc.jpg");
             $top_image.height(window_width * (1025 / 2080));
         }
-        if (window_width <= 700 && window_width > 450) {
+        if (window_width <= 700 && window_width > 433) {
             $("#top_image1").attr("src", "images/Header_image_1_for_pad.jpg");
             $top_image.height(window_width * (1175 / 2048));
         }
-        if (window_width <= 450) {
+        if (window_width <= 433) {
             $("#top_image1").attr("src", "images/Header_image_1_for_phone.jpg");
             $top_image.height(window_width * (2208 / 1242));
         }

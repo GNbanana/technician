@@ -45,7 +45,7 @@ body{
     line-height: 30px;
     letter-spacing: 1px;
     font-family: 微软雅黑;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .search_box {
@@ -762,6 +762,7 @@ body{
     .tech_list .list_content {
         margin: 20px auto 0;
         width: 100%;
+        height:414px;
     }
     .tech_list .list_left, .tech_list .list_right{
         height:9%;
@@ -775,9 +776,28 @@ body{
         transform:rotate(45deg);
     }
     .list_content_info {
-        width: 145px;
-        height: 187px;
+        width: 120px;
+        height: 155px;
         margin: 10px;
+    }
+    .list_content_info .person_img {
+        width: 120px;
+        height: 80px;
+    }
+    .list_content_info .person_img img {
+        width: 120px;
+        height: auto;
+        top:-80px;
+    }
+    .list_content_info .person_name {
+        margin: 20px auto 0;
+    }
+    .list_content_info .person_name {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .list_content_info:hover .person_name {
+        top: 70px;
     }
 }
 @media screen and (max-width:450px) {
