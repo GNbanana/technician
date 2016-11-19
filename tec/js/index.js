@@ -93,7 +93,13 @@ function technicianListCenter() {
     var technician_width = $technician_list.width() + parseInt($technician_list.css("margin-left")) + parseInt($technician_list.css("margin-right"));//单个技术员部分所占据的宽度
     var technician_container_width = $technician_list_container.width();
     var row_list_number = Math.floor(technician_container_width / technician_width);
-    $(".list_content_inner").width(row_list_number * technician_width);
+    if($(window).width() >= 433){
+        $(".list_content_inner").width(row_list_number * technician_width);
+    }
+    else{
+        $(".list_content_inner").width("100%");
+    }
+
 
 };
 /*点击列表左右部分上下滑动的函数.status表示往上滑动还是往下滑动*/
