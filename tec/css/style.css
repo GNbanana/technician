@@ -94,13 +94,13 @@ body {
 
 .list_head .feiyang_icon img {
     height: 100%;
-    width: 100%;
+    width: auto;
 }
 
 .tech_list {
     height: 550px;
     width: 100%;
-    margin-bottom: 190px;
+    margin-bottom: 110px;
 }
 
 .tech_list > div {
@@ -185,12 +185,14 @@ body {
 
 .list_left > div, .list_right > div {
     position: absolute;
-    top: 10%;
+    top: 52.5%;
     right: 0px;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     transform: translateY(-45px) rotate(-45deg);
 }
+
+
 
 .list_left > div {
     left: 15px;
@@ -241,7 +243,7 @@ body {
 }
 
 .list_content_info:hover .person_name {
-    top: 75px;
+    top: 70px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -765,7 +767,7 @@ body {
     cursor: pointer;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px){
     .top_image_span1 {
         top: 5.4%;
         font-size: 1.8em;
@@ -785,15 +787,23 @@ body {
         top: 40%;
     }
 
+    .tech_list {
+        height: 520px;
+        margin-bottom: 0px;
+    }
     .list_head {
         height: 300px;
     }
 
     .list_head .feiyang_icon {
         width: 195px;
-        height: auto;
+        height: 195px;
     }
 
+    .list_head .feiyang_icon img {
+        height: 100%;
+        width: auto;
+    }
     /*滚动按钮重新定位*/
     .tech_list > div {
         float: inherit;
@@ -812,10 +822,16 @@ body {
         left: 50%;
     }
 
+    .list_left > div, .list_right > div {
+        top: 10%;
+        width: 40px;
+        height: 40px;
+    }
     .list_left > div {
         transform: translateX(-45px) rotate(45deg);
         left: 25px;
     }
+
 
     .list_right > div {
         transform: rotate(45deg);
@@ -854,12 +870,12 @@ body {
         margin: 0;
         line-height: 18px;
         position: absolute;
-        top: 45px;
+        top: 35px;
         left: 42%;
     }
 
     .list_content_info:hover .person_name {
-        top: 74px;
+        top: 84px;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -ms-transition: all 0.5s;
@@ -868,12 +884,37 @@ body {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 450px){
+    .search_box {
+        height: 145px;
+    }
+    .search_box input {
+        height: 30px;
+        width: 180px;
+        border: 2px solid #979393;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    .list_head {
+        height: 190px;
+    }
+    .list_head .year {
+         top: 5px;
+         font-size: 18px;
+     }
+    .list_head .feiyang_icon {
+        width: 100px;
+        height: 100px;
+        margin: 45px auto 0;
+    }
     .top_image_span1 {
         top: 10.4%;
         font-size: 2.05em;
         letter-spacing: 5px;
         height: 60px;
+    }
+    .tech_list .list_content {
+        height: 330px;
     }
 
     .top_image_span2 {
@@ -886,9 +927,13 @@ body {
     }
 
     .list_content_info {
-        width: 30%;
-        height: 155px;
-        margin: 10px 1.5%;
+        width: 25%;
+        height: 145px;
+        margin: 10px 4.1%;
+    }
+
+    .list_content_info .person_year {
+        left: 49%;
     }
 
     .list_content_info .person_img {
@@ -901,49 +946,76 @@ body {
     }
 
     .list_content_info:hover .person_name {
-        top: 85px;
+        top: 75px;
+    }
+    .list_content_info .person_year {
+        font-size: 20px;
     }
 }
 
 @media screen and (max-width: 390px) {
-    .tech_list .list_content {
-        height: 330px;
+    .tech_list {
+        height: 450px;
     }
-
-    .list_content_info {
-        height: 145px;
-    }
-    .list_content_info .person_name {
-        font-size: 13px;
-        line-height: 17px;
-    }
-    .list_content_info:hover .person_name {
-        top: 75px;
-    }
-}
-@media screen and (max-width: 340px) {
     .tech_list .list_content {
         height: 310px;
     }
-
     .list_content_info {
+        width: 27%;
         height: 135px;
+        margin: 10px 3%;
+    }
+    .list_content_info .person_name {
+        top: 30px;
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .list_content_info:hover .person_name {
+        top: 68px;
+    }
+
+    .list_left > div, .list_right > div {
+        top: 10%;
+        width: 30px;
+        height: 30px;
+        box-shadow: none;
+    }
+}
+@media screen and (max-width: 340px)  {
+    .tech_list {
+        height: 430px;
+    }
+    .list_content_info .person_year {
+        font-size: 18px;
+        bottom: 15px;
+    }
+    .list_content_info {
+        height: 145px;
+    }
+    .tech_list .list_content {
+        height: 290px;
+    }
+    .list_content_info {
+        height: 125px;
     }
     .list_content_info .person_name {
         font-size: 12px;
         line-height: 16px;
     }
     .list_content_info:hover .person_name {
-        top: 70px;
+        top: 60px;
     }
 }
 @media screen and (max-width: 300px) {
+    .tech_list {
+        height: 380px;
+    }
     .tech_list .list_content {
-        height: 300px;
+        height: 260px;
     }
 
     .list_content_info {
-        height: 130px;
+        height: 110px;
     }
     .list_content_info .person_name {
         font-size: 12px;
