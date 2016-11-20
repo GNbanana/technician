@@ -11,49 +11,49 @@
     <script src="js/index.js"></script>
     <script>
         //loadmore
-        function showdiv(targetid,objN){
+        function showdiv(targetid, objN) {
 
-            var target=document.getElementById(targetid);
-            var clicktext=document.getElementById(objN)
+            var target = document.getElementById(targetid);
+            var clicktext = document.getElementById(objN)
 
-            if (target.style.display=="block"){
-                target.style.display="none";
-                clicktext.innerText="加载更多年份";
-
-
-            } else {
-                target.style.display="block";
-                clicktext.innerText='关闭';
-            }
-        }
-
-        function showdiv1(targetid,objN){
-
-            var target1=document.getElementById(targetid);
-            var clicktext1=document.getElementById(objN)
-
-            if (target1.style.display=="block"){
-                target1.style.display="none";
-                clicktext1.innerText="查看所有本年照片";
+            if (target.style.display == "block") {
+                target.style.display = "none";
+                clicktext.innerText = "加载更多年份";
 
 
             } else {
-                target1.style.display="block";
-                clicktext1.innerText='关闭';
+                target.style.display = "block";
+                clicktext.innerText = '关闭';
             }
         }
 
-        $(function(){
-            $(".yearslist a").click(function(){
+        function showdiv1(targetid, objN) {
+
+            var target1 = document.getElementById(targetid);
+            var clicktext1 = document.getElementById(objN)
+
+            if (target1.style.display == "block") {
+                target1.style.display = "none";
+                clicktext1.innerText = "查看所有本年照片";
+
+
+            } else {
+                target1.style.display = "block";
+                clicktext1.innerText = '关闭';
+            }
+        }
+
+        $(function () {
+            $(".yearslist a").click(function () {
                 var hr = $(this).attr("href");
                 var anh = $(hr).offset().top;
-                $("html,body").stop().animate({scrollTop:anh},2000);
+                $("html,body").stop().animate({scrollTop: anh}, 2000);
             })
         })
 
-        $(function(){
-            $(".click").click(function(){
-                $("html,body").animate({scrollTop:0},2000);
+        $(function () {
+            $(".click").click(function () {
+                $("html,body").animate({scrollTop: 0}, 2000);
             })
         })
 
@@ -61,7 +61,7 @@
     </script>
 </head>
 <body>
-<img  id="top_image1">
+<img id="top_image1">
 
 <div class="top_image_div">
     <div class="top_image_span1">
@@ -139,6 +139,7 @@
     <div class="pic">
         <div class="contect_banner">
             <img src="images/Content_banner_pic.png" alt="">
+
             <p id="contect1" type="button" onClick="showdiv1('contentid1','contect1')">查看所有本年照片</p>
         </div>
 
@@ -147,12 +148,14 @@
                 <div id="grid-gallery" class="grid-gallery">
                     <section class="grid-wrap">
                         <ul class="grid">
-                            <li class="grid-sizer"></li><!-- for Masonry column width -->
+                            <li class="grid-sizer"></li>
+                            <!-- for Masonry column width -->
                             <li>
                                 <figure>
                                     <img src="images/1.png" alt="img01"/>
                                     <figcaption>
                                         <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -162,6 +165,7 @@
                                     <img src="images/2.png" alt="img02"/>
                                     <figcaption>
                                         <p>美女你谁？</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -171,6 +175,7 @@
                                     <img src="images/3.png" alt="img03"/>
                                     <figcaption>
                                         <p>棒棒糖</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -180,6 +185,7 @@
                                     <img src="images/4.png" alt="img04"/>
                                     <figcaption>
                                         <p>会员大会上面坐在地上吃东西的楠哥</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -189,6 +195,7 @@
                                     <img src="images/5.png" alt="img05"/>
                                     <figcaption>
                                         <p>会员大会上的来占位置的刘裕拯</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -198,6 +205,7 @@
                                     <img src="images/6.png" alt="img06"/>
                                     <figcaption>
                                         <p>楠家师门</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -207,6 +215,7 @@
                                     <img src="images/7.png" alt="img01"/>
                                     <figcaption>
                                         <p>一抬相机他妈的全转过去了</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                 </figure>
@@ -216,6 +225,7 @@
                                     <img src="images/8.png" alt="img02"/>
                                     <figcaption>
                                         <p>四月大修上的一排技术员</p>
+
                                         <p>2016.4.</p>
                                     </figcaption>
                                 </figure>
@@ -225,6 +235,7 @@
                                     <img src="images/9.png" alt="img03"/>
                                     <figcaption>
                                         <p>发呆的熊老板</p>
+
                                         <p>2016.6</p>
                                     </figcaption>
                                 </figure>
@@ -233,48 +244,94 @@
                                 <figure>
                                     <img src="images/10.png" alt="img04"/>
                                     <figcaption>
-                                        <p>猜他们在拍的是谁？</p>
+                                        <p>神他妈？</p>
+
                                         <p>2016.6</p>
                                     </figcaption>
                                 </figure>
                             </li>
-                            <div id="contentid1" class="morepics">
-                                <li>
-                                    <figure>
-                                        <img src="images/2.png" alt="img02"/>
-                                        <figcaption>
-                                            <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
-                                            <p>2016.9</p>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <img src="images/1.png" alt="img01"/>
-                                        <figcaption>
-                                            <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
-                                            <p>2016.9</p>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                                <li>
-                                    <figure>
-                                        <img src="images/1.png" alt="img01"/>
-                                        <figcaption>
-                                            <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
-                                            <p>2016.9</p>
-                                        </figcaption>
-                                    </figure>
-                                </li>
-                            </div>
+                            <li>
+                                <figure>
+                                    <img src="images/10.png" alt="img04"/>
+                                    <figcaption>
+                                        <p>的合照？</p>
+
+                                        <p>2016.6</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/10.png" alt="img04"/>
+                                    <figcaption>
+                                        <p>哈哈哈？</p>
+
+                                        <p>2016.6</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/10.png" alt="img04"/>
+                                    <figcaption>
+                                        <p>呵呵？</p>
+
+                                        <p>2016.6</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="images/10.png" alt="img04"/>
+                                    <figcaption>
+                                        <p>嘿嘿？</p>
+
+                                        <p>2016.6</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <!--<div id="contentid1" class="morepics">-->
+                                <!--<li>-->
+                                    <!--<figure>-->
+                                        <!--<img src="images/2.png" alt="img02"/>-->
+                                        <!--<figcaption>-->
+                                            <!--<p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>-->
+
+                                            <!--<p>2016.9</p>-->
+                                        <!--</figcaption>-->
+                                    <!--</figure>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<figure>-->
+                                        <!--<img src="images/1.png" alt="img01"/>-->
+                                        <!--<figcaption>-->
+                                            <!--<p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>-->
+
+                                            <!--<p>2016.9</p>-->
+                                        <!--</figcaption>-->
+                                    <!--</figure>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<figure>-->
+                                        <!--<img src="images/1.png" alt="img01"/>-->
+                                        <!--<figcaption>-->
+                                            <!--<p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>-->
+
+                                            <!--<p>2016.9</p>-->
+                                        <!--</figcaption>-->
+                                    <!--</figure>-->
+                                <!--</li>-->
+                            <!--</div>-->
                         </ul>
-                    </section><!-- // grid-wrap -->
+                    </section>
+                    <!-- // grid-wrap -->
                     <section class="slideshow">
                         <ul>
                             <li>
                                 <figure>
                                     <figcaption>
                                         <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/1.png" alt="img01"/>
@@ -284,6 +341,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>美女你谁？</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/2.png" alt="img02"/>
@@ -293,6 +351,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>棒棒糖</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/3.png" alt="img03"/>
@@ -302,6 +361,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>会员大会上面坐在地上吃东西的楠哥</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/4.png" alt="img04"/>
@@ -311,6 +371,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>会员大会上的来占位置的刘裕拯</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/5.png" alt="img05"/>
@@ -320,6 +381,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>楠家师门</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/6.png" alt="img06"/>
@@ -329,6 +391,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>一抬相机他妈的全转过去了</p>
+
                                         <p>2016.9</p>
                                     </figcaption>
                                     <img src="images/7.png" alt="img01"/>
@@ -338,6 +401,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>四月大修上的一排技术员</p>
+
                                         <p>2016.4.</p>
                                     </figcaption>
                                     <img src="images/8.png" alt="img02"/>
@@ -347,6 +411,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>发呆的熊老板</p>
+
                                         <p>2016.6</p>
                                     </figcaption>
                                     <img src="images/9.png" alt="img03"/>
@@ -356,6 +421,7 @@
                                 <figure>
                                     <figcaption>
                                         <p>猜他们在拍的是谁？</p>
+
                                         <p>2016.6</p>
                                     </figcaption>
                                     <img src="images/10.png" alt="img04"/>
@@ -369,7 +435,8 @@
                         </nav>
                     </section>
                     <!-- // slideshow -->
-                </div><!-- // grid-gallery -->
+                </div>
+                <!-- // grid-gallery -->
             </div>
 
             <div class="tagContent" id="tagContent1">
@@ -382,9 +449,10 @@
         <div id="contentid" class="none">
             <div class="yearslist">
                 <ul id=tags>
-                    <li class=selectTag><A onMouseover="selectTag('tagContent0',this)" href="javascript:void(0)">2015</A> </li>
-                    <li><A onMouseover="selectTag('tagContent1',this)" href="javascript:void(0)">2014</A> </li>
-                    <li><A onMouseover="selectTag('tagContent2',this)" href="javascript:void(0)">2013</A> </li>
+                    <li class=selectTag><A onMouseover="selectTag('tagContent0',this)"
+                                           href="javascript:void(0)">2015</A></li>
+                    <li><A onMouseover="selectTag('tagContent1',this)" href="javascript:void(0)">2014</A></li>
+                    <li><A onMouseover="selectTag('tagContent2',this)" href="javascript:void(0)">2013</A></li>
                 </ul>
             </div>
             <a class="line"></a>
@@ -435,16 +503,16 @@
     new CBPGridGallery(document.getElementById('grid-gallery'));
 </script>
 <script type="text/javascript">
-    function selectTag(showContent,selfObj){
+    function selectTag(showContent, selfObj) {
         // 操作标签
         var tag = document.getElementById("tags").getElementsByTagName("li");
         var taglength = tag.length;
-        for(i=0; i<taglength; i++){
+        for (i = 0; i < taglength; i++) {
             tag[i].className = "";
         }
         selfObj.parentNode.className = "selectTag";
         // 操作内容
-        for(i=0; j=document.getElementById("tagContent"+i); i++){
+        for (i = 0; j = document.getElementById("tagContent" + i); i++) {
             j.style.display = "none";
         }
         document.getElementById(showContent).style.display = "block";
