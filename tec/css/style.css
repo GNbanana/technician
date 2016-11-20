@@ -679,11 +679,11 @@ body {
 }
 
 .full_screen_content {
-    height: 520px;
-    width: 820px;
+    height: 416px;
+    width: 655px;
     margin: 0 auto;
     position: relative;
-    top: 50%;
+    top: 58%;
     -webkit-transform: translateY(-260px);
     -moz-transform: translateY(-260px);
     -ms-transform: translateY(-260px);
