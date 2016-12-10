@@ -78,7 +78,7 @@ $(function () {
 
         $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "3px"}, 0);
         $(".full_screen_mote span").animate({bottom: "3px"}, 0);
-        $(".full_screen_techinfo").find("img").animate({left: "100%"}, 0);
+        $(".full_screen_techinfo").find("img").animate({left: "-100%"}, 0);
     })
     /*当按键盘esc时退出全屏*/
     $(window).keydown(function (e) {
