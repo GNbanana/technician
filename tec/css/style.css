@@ -628,8 +628,8 @@ body {
 
 .full_screen_techinfo {
     position: fixed;
-    opacity: 0;
-    display: none;
+    opacity: 1;
+    display: block;
     top: 0px;
     left: 0px;
     z-index: 100;

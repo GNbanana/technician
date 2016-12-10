@@ -32,18 +32,18 @@ $(function () {
         console.log(window_width + "\t" + window_height);
         technicianListCenter();         //在屏幕分辨率改变时调用函数使技术员页面居中
 
-        /*刷新頂部的效果*/
+        /*刷新?部的效果*/
         flashTopCover();                //在屏幕分辨率调试刷新顶部的效果
 
         if (window_width > 700) {
             $("#top_image1").attr("src", "images/Header_image_1_for_pc.jpg");
             $top_image.height(window_width * (1025 / 2080));
         }
-        if (window_width <= 700 && window_width > 433) {
+        if (window_width <= 700 && window_width > 450) {
             $("#top_image1").attr("src", "images/Header_image_1_for_pad.jpg");
             $top_image.height(window_width * (1175 / 2048));
         }
-        if (window_width <= 433) {
+        if (window_width <= 450) {
             $("#top_image1").attr("src", "images/Header_image_1_for_phone.jpg");
             $top_image.height(window_width * (2208 / 1242));
         }
@@ -61,8 +61,11 @@ $(function () {
         $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "0px"}, 500);
         $(".full_screen_mote span").animate({bottom: "0px"}, 500);
         /*全屏右上方退出按钮的出现效果*/
-        $('.close_full_screen div:nth-child(1)').animate({width: "70px"}, 500);
-        $('.close_full_screen div:nth-child(2)').delay(200).animate({height: "70px"}, 500);
+        var close_button_width = $(".close_full_screen").width();
+        var close_animate_length = close_button_width * 1.414;//计算对角线的长度，并在下面的动画中控制
+        $('.close_full_screen div:nth-child(1)').animate({width: close_animate_length}, 500);
+        $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
+
     });
     /*全屏后点击右上角就退出全屏*/
     $(".close_full_screen").click(function () {
@@ -72,6 +75,10 @@ $(function () {
         /**/
         $('.close_full_screen div:nth-child(1)').animate({width: "0px"}, 500);
         $('.close_full_screen div:nth-child(2)').animate({height: "0px"}, 500);
+
+        $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "3px"}, 0);
+        $(".full_screen_mote span").animate({bottom: "3px"}, 0);
+        $(".full_screen_techinfo").find("img").animate({left: "100%"}, 0);
     })
     /*当按键盘esc时退出全屏*/
     $(window).keydown(function (e) {

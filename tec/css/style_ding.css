@@ -534,8 +534,51 @@ body {
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
+    .full_screen_content {
+        height: 333px;
+        width: 524px;
+        top: 50%;
+        -webkit-transform: translateY(-160px);
+        -moz-transform: translateY(-160px);
+        -ms-transform: translateY(-160px);
+        -o-transform: translateY(-160px);
+        transform: translateY(-160px);
+    }
+    .close_full_screen {
+        width: 35px;
+        height: 35px;
+    }
+    .full_screen_right_content {
+        height: 80%;
+        width: 70%;
+        margin: 12% auto 0;
+    }
+    .full_screen_tech_info p:nth-child(1) {
+        font-size: 23px;
+    }
+    .full_screen_tech_info p:nth-child(2) {
+        font-size: 14px;
+    }
+    .full_screen_mote span {
+        line-height: 20px;
+    }
+    .full_screen_teacher span {
+        font-size: 14px;
+    }
 }
 
+@media screen and (max-width: 540px){
+    .full_screen_content {
+        height: 266px;
+        width: 420px;
+        top: 50%;
+        -webkit-transform: translateY(-133px);
+        -moz-transform: translateY(-133px);
+        -ms-transform: translateY(-133px);
+        -o-transform: translateY(-133px);
+        transform: translateY(-133px);
+    }
+}
 @media screen and (max-width: 450px){
     .search_box {
         height: 145px;
