@@ -53,32 +53,55 @@ $(function () {
     });
     /*鼠标单击技术员列表的动画*/
     $(".list_content_info").click(function () {
+        var window_width = $(window).width();
         $(".full_screen_techinfo").css("display", "block").animate({opacity: "1"}, 500)/*控制全屏的出现*/
             .delay(500)
-            .find("img").animate({left: "0"}, 500).end();
+
         /*全屏左边的图片缓慢划出*/
         /*右侧的文字缓慢的下滑效果*/
-        $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "0px"}, 500);
-        $(".full_screen_mote span").animate({bottom: "0px"}, 500);
-        /*全屏右上方退出按钮的出现效果*/
-        var close_button_width = $(".close_full_screen").width();
-        var close_animate_length = close_button_width * 1.414;//计算对角线的长度，并在下面的动画中控制
-        $('.close_full_screen div:nth-child(1)').animate({width: close_animate_length}, 500);
-        $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
+        if(window_width > 450){
+            $(".full_screen_techinfo").find("img").animate({left: "0"}, 500).end();
+            $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "0px"}, 500);
+            $(".full_screen_mote span").animate({bottom: "0px"}, 500);
+            /*全屏右上方退出按钮的出现效果*/
+            var close_button_width = $(".close_full_screen").width();
+            var close_animate_length = close_button_width * 1.414;//计算对角线的长度，并在下面的动画中控制
+            $('.close_full_screen div:nth-child(1)').animate({width: close_animate_length}, 500);
+            $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
 
+        }
+        else if(window_width <= 450){
+            $(".full_screen_techinfo").find("img").animate({top: "0"}, 500).end();
+            $(".full_screen_tech_info p,.full_screen_teacher span").delay(400).animate({top:"0px",opacity:"1"},500);
+            $(".full_screen_mote span").delay(400).animate({bottom:"5px",opacity:"1"},500);
+            /*全屏右上方退出按钮的出现效果*/
+            var close_button_width = $(".close_full_screen").width();
+            var close_animate_length = close_button_width * 1.414;//计算对角线的长度，并在下面的动画中控制
+            $('.close_full_screen div:nth-child(1)').animate({width: close_animate_length}, 500);
+            $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
+        }
     });
     /*全屏后点击右上角就退出全屏*/
     $(".close_full_screen").click(function () {
+        var window_width = $(window).width();
         $(".full_screen_techinfo").animate({opacity: "0"}, 500, function () {
             $(this).css("display", "none");
         })
         /**/
-        $('.close_full_screen div:nth-child(1)').animate({width: "0px"}, 500);
-        $('.close_full_screen div:nth-child(2)').animate({height: "0px"}, 500);
+        $('.close_full_screen div:nth-child(1)').animate({width: "0px"}, 300);
+        $('.close_full_screen div:nth-child(2)').animate({height: "0px"}, 300);
 
-        $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "3px"}, 0);
-        $(".full_screen_mote span").animate({bottom: "3px"}, 0);
-        $(".full_screen_techinfo").find("img").animate({left: "-100%"}, 0);
+        if(window_width > 450){
+            $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "3px"}, 300);
+            $(".full_screen_mote span").animate({bottom: "3px"}, 300);
+            $(".full_screen_techinfo").find("img").animate({left: "-100%"}, 300);
+        }
+        else if(window_width <= 450){
+            $(".full_screen_techinfo").find("img").animate({top: "-100px"}, 300).end();
+            $(".full_screen_tech_info p,.full_screen_teacher span").animate({top:"6px",opacity:"0"},300);
+            $(".full_screen_mote span").animate({bottom:"-2px",opacity:"0"},300);
+        }
+
     })
     /*当按键盘esc时退出全屏*/
     $(window).keydown(function (e) {
