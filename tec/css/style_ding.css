@@ -193,8 +193,6 @@ body {
     transform: translateY(-45px) rotate(-45deg);
 }
 
-
-
 .list_left > div {
     left: 15px;
 }
@@ -205,8 +203,6 @@ body {
 
 .list_left .left_roll_bottom, .list_right .right_roll_bottom {
     background-color: #dcdbd6;
-    /*-webkit-box-shadow:*/
-    /*-moz-box-shadow:  */
 }
 
 .list_right .right_roll_bottom {
@@ -419,7 +415,7 @@ body {
     cursor: pointer;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
     .top_image_span1 {
         top: 5.4%;
         font-size: 1.8em;
@@ -443,6 +439,7 @@ body {
         height: 520px;
         margin-bottom: 0px;
     }
+
     .list_head {
         height: 300px;
     }
@@ -456,6 +453,7 @@ body {
         height: 100%;
         width: auto;
     }
+
     /*滚动按钮重新定位*/
     .tech_list > div {
         float: inherit;
@@ -479,11 +477,11 @@ body {
         width: 40px;
         height: 40px;
     }
+
     .list_left > div {
         transform: translateX(-45px) rotate(45deg);
         left: 25px;
     }
-
 
     .list_right > div {
         transform: rotate(45deg);
@@ -534,6 +532,7 @@ body {
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
+
     .full_screen_content {
         height: 333px;
         width: 524px;
@@ -544,30 +543,36 @@ body {
         -o-transform: translateY(-160px);
         transform: translateY(-160px);
     }
+
     .close_full_screen {
         width: 35px;
         height: 35px;
     }
+
     .full_screen_right_content {
         height: 80%;
         width: 70%;
         margin: 12% auto 0;
     }
+
     .full_screen_tech_info p:nth-child(1) {
         font-size: 23px;
     }
+
     .full_screen_tech_info p:nth-child(2) {
         font-size: 14px;
     }
+
     .full_screen_mote span {
         line-height: 20px;
     }
+
     .full_screen_teacher span {
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 540px){
+@media screen and (max-width: 540px) {
     .full_screen_content {
         height: 266px;
         width: 420px;
@@ -578,36 +583,45 @@ body {
         -o-transform: translateY(-133px);
         transform: translateY(-133px);
     }
+
     /*全屏的信息部分*/
     .full_screen_right_content {
         height: 90%;
         width: 75%;
         margin: 6% auto 0;
     }
+
     .full_screen_tech_info p:nth-child(1) {
         font-size: 20px;
     }
+
     .full_screen_tech_info p:nth-child(2) {
         font-size: 13px;
     }
+
     .full_screen_mote {
         top: 10px;
     }
+
     .full_screen_mote span {
         font-size: 15px;
         line-height: 18px;
     }
+
     .full_screen_teacher {
         margin: 10% 0 0;
     }
+
     .full_screen_teacher span {
         font-size: 13px;
     }
 }
-@media screen and (max-width: 450px){
+
+@media screen and (max-width: 450px) {
     .search_box {
         height: 145px;
     }
+
     .search_box input {
         height: 30px;
         width: 180px;
@@ -615,24 +629,29 @@ body {
         border-radius: 6px;
         font-size: 16px;
     }
+
     .list_head {
         height: 190px;
     }
+
     .list_head .year {
-         top: 5px;
-         font-size: 18px;
-     }
+        top: 5px;
+        font-size: 18px;
+    }
+
     .list_head .feiyang_icon {
         width: 100px;
         height: 100px;
         margin: 45px auto 0;
     }
+
     .top_image_span1 {
         top: 10.4%;
         font-size: 2.05em;
         letter-spacing: 5px;
         height: 60px;
     }
+
     .tech_list .list_content {
         height: 330px;
     }
@@ -668,34 +687,41 @@ body {
     .list_content_info:hover .person_name {
         top: 75px;
     }
+
     .list_content_info .person_year {
         font-size: 20px;
     }
+
     /*点击查看某个技术员的信息时*/
     .full_screen_techinfo {
         background-color: transparent;
     }
+
     .full_screen_content {
         height: 430px;
         width: 250px;
         top: 50%;
-         -webkit-transform: translateY(-207px);
+        -webkit-transform: translateY(-207px);
         -moz-transform: translateY(-207px);
         -ms-transform: translateY(-207px);
         -o-transform: translateY(-207px);
         transform: translateY(-207px);
     }
-    .full_screen_content > div{
+
+    .full_screen_content > div {
         width: 100%;
     }
-    .full_screen_content > div:nth-child(1){
-         height: 34%;
+
+    .full_screen_content > div:nth-child(1) {
+        height: 34%;
         background-color: #d6d6d6;
     }
-    .full_screen_content > div:nth-child(2){
-         height: 66%;
+
+    .full_screen_content > div:nth-child(2) {
+        height: 66%;
         background-color: #d6d6d6;
     }
+
     .full_screen_right_content {
         height: 85%;
         width: 75%;
@@ -706,38 +732,47 @@ body {
         height: 15%;
         width: 100%;
     }
+
     .full_screen_tech_info p:nth-child(1) {
         font-size: 24px;
     }
+
     .full_screen_tech_info p:nth-child(2) {
         font-size: 13px;
     }
+
     .full_screen_mote {
         height: 63%;
     }
+
     .full_screen_mote span {
         font-size: 12px;
         line-height: 20px;
     }
+
     .full_screen_teacher span {
         font-size: 12px;
     }
+
     .full_screen_teacher {
         margin: 11% 0 0;
     }
 
     .full_screen_left img {
-        top:-100%;
+        top: -100%;
         left: 0%;
     }
-    .full_screen_tech_info p:nth-child(1),.full_screen_tech_info p:nth-child(2),.full_screen_teacher span{
-        top:6px;
+
+    .full_screen_tech_info p:nth-child(1), .full_screen_tech_info p:nth-child(2), .full_screen_teacher span {
+        top: 6px;
         opacity: 0;
     }
-    .full_screen_mote span{
+
+    .full_screen_mote span {
         bottom: -2px;
         opacity: 0;
     }
+
     /*关闭窗口的按钮*/
     .close_full_screen {
         width: 25px;
@@ -745,7 +780,8 @@ body {
         top: 13px;
         right: 10px;
     }
-    .close_full_screen>div{
+
+    .close_full_screen > div {
         background-color: rgb(136, 136, 136);
     }
 }
@@ -754,19 +790,23 @@ body {
     .tech_list {
         height: 450px;
     }
+
     .tech_list .list_content {
         height: 310px;
     }
+
     .list_content_info {
         width: 27%;
         height: 135px;
         margin: 10px 3%;
     }
+
     .list_content_info .person_name {
         top: 30px;
         font-size: 13px;
         line-height: 16px;
     }
+
     .list_content_info:hover .person_name {
         top: 68px;
     }
@@ -778,35 +818,44 @@ body {
         box-shadow: none;
     }
 }
-@media screen and (max-width: 340px)  {
+
+@media screen and (max-width: 340px) {
     .tech_list {
         height: 430px;
     }
+
     .list_content_info .person_year {
         font-size: 18px;
         bottom: 15px;
     }
+
     .list_content_info {
         height: 145px;
     }
+
     .tech_list .list_content {
         height: 290px;
     }
+
     .list_content_info {
         height: 125px;
     }
+
     .list_content_info .person_name {
         font-size: 12px;
         line-height: 16px;
     }
+
     .list_content_info:hover .person_name {
         top: 60px;
     }
 }
+
 @media screen and (max-width: 300px) {
     .tech_list {
         height: 380px;
     }
+
     .tech_list .list_content {
         height: 260px;
     }
@@ -814,10 +863,12 @@ body {
     .list_content_info {
         height: 110px;
     }
+
     .list_content_info .person_name {
         font-size: 12px;
         line-height: 15px;
     }
+
     .list_content_info:hover .person_name {
         top: 65px;
     }

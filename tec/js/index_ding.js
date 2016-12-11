@@ -108,6 +108,19 @@ $(function () {
         if (e.keyCode === 27)
             $(".close_full_screen").trigger("click");
     })
+    /*点击列表左右的按钮来上下滚动列表*/
+    /*向上滑*/
+    $(".left_roll").click(function () {
+        content_height = $(".list_content_info").height();
+        console.log(content_height);
+    })
+    /*向下滑*/
+    $(".right_roll").click(function () {
+        content_height = $(".list_content_info").height()
+        content_margin = parseInt($(".list_content_info").css("margin"));
+        content_total_height = content_height + content_margin*2;
+        console.log(content_total_height);
+    })
 })
 /*改变屏幕大小时，重新刷新顶部的效果*/
 function flashTopCover() {
@@ -133,6 +146,3 @@ function technicianListCenter() {
 
 };
 /*点击列表左右部分上下滑动的函数.status表示往上滑动还是往下滑动*/
-function technicianListScroll(status) {
-    /**/
-}
