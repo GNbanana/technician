@@ -29,10 +29,10 @@ $(function () {
     $(window).resize(function () {
         var window_width = $(window).width();
         var window_height = $(window).height();
-        console.log(window_width + "\t" + window_height);
+        // console.log(window_width + "\t" + window_height);
         technicianListCenter();         //在屏幕分辨率改变时调用函数使技术员页面居中
 
-        /*刷新?部的效果*/
+        /*刷新顶部的效果*/
         flashTopCover();                //在屏幕分辨率调试刷新顶部的效果
 
         if (window_width > 700) {
@@ -50,6 +50,9 @@ $(function () {
 
         var top_image_height = $top_image.height();
         $(".top_image_div ").height(top_image_height);
+
+        /*调整技术员列表直接顶部对齐上端*/
+        $(".list_content_inner").animate({"top":"0px"},1500,"swing");
     });
     /*鼠标单击技术员列表的动画*/
     $(".list_content_info").click(function () {
@@ -59,7 +62,7 @@ $(function () {
 
         /*全屏左边的图片缓慢划出*/
         /*右侧的文字缓慢的下滑效果*/
-        if(window_width > 450){
+        if (window_width > 450) {
             $(".full_screen_techinfo").find("img").animate({left: "0"}, 500).end();
             $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "0px"}, 500);
             $(".full_screen_mote span").animate({bottom: "0px"}, 500);
@@ -70,10 +73,10 @@ $(function () {
             $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
 
         }
-        else if(window_width <= 450){
+        else if (window_width <= 450) {
             $(".full_screen_techinfo").find("img").animate({top: "0"}, 500).end();
-            $(".full_screen_tech_info p,.full_screen_teacher span").delay(400).animate({top:"0px",opacity:"1"},500);
-            $(".full_screen_mote span").delay(400).animate({bottom:"5px",opacity:"1"},500);
+            $(".full_screen_tech_info p,.full_screen_teacher span").delay(400).animate({top: "0px", opacity: "1"}, 500);
+            $(".full_screen_mote span").delay(400).animate({bottom: "5px", opacity: "1"}, 500);
             /*全屏右上方退出按钮的出现效果*/
             var close_button_width = $(".close_full_screen").width();
             var close_animate_length = close_button_width * 1.414;//计算对角线的长度，并在下面的动画中控制
@@ -91,15 +94,15 @@ $(function () {
         $('.close_full_screen div:nth-child(1)').animate({width: "0px"}, 300);
         $('.close_full_screen div:nth-child(2)').animate({height: "0px"}, 300);
 
-        if(window_width > 450){
+        if (window_width > 450) {
             $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "3px"}, 300);
             $(".full_screen_mote span").animate({bottom: "3px"}, 300);
             $(".full_screen_techinfo").find("img").animate({left: "-100%"}, 300);
         }
-        else if(window_width <= 450){
+        else if (window_width <= 450) {
             $(".full_screen_techinfo").find("img").animate({top: "-100px"}, 300).end();
-            $(".full_screen_tech_info p,.full_screen_teacher span").animate({top:"6px",opacity:"0"},300);
-            $(".full_screen_mote span").animate({bottom:"-2px",opacity:"0"},300);
+            $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "6px", opacity: "0"}, 300);
+            $(".full_screen_mote span").animate({bottom: "-2px", opacity: "0"}, 300);
         }
 
     })
@@ -111,16 +114,15 @@ $(function () {
     /*点击列表左右的按钮来上下滚动列表*/
     /*向上滑*/
     $(".left_roll").click(function () {
-        content_height = $(".list_content_info").height();
-        console.log(content_height);
+        content_list_scroll(0);
     })
     /*向下滑*/
     $(".right_roll").click(function () {
-        content_height = $(".list_content_info").height()
-        content_margin = parseInt($(".list_content_info").css("margin"));
-        content_total_height = content_height + content_margin*2;
-        console.log(content_total_height);
+        content_list_scroll(1);
     })
+
+
+
 })
 /*改变屏幕大小时，重新刷新顶部的效果*/
 function flashTopCover() {
@@ -136,13 +138,52 @@ function technicianListCenter() {
     var technician_width = $technician_list.width() + parseInt($technician_list.css("margin-left")) + parseInt($technician_list.css("margin-right"));//单个技术员部分所占据的宽度
     var technician_container_width = $technician_list_container.width();
     var row_list_number = Math.floor(technician_container_width / technician_width);
-    if($(window).width() >= 433){
+    if ($(window).width() >= 433) {
         $(".list_content_inner").width(row_list_number * technician_width);
     }
-    else{
+    else {
         $(".list_content_inner").width("100%");
     }
 
 
 };
 /*点击列表左右部分上下滑动的函数.status表示往上滑动还是往下滑动*/
+function content_list_scroll(status) {
+    $list_content_info = $(".list_content_info");
+    $list_content_inner = $(".list_content_inner");
+    content_height = $list_content_info.height();  //单个技术员栏目所占的高度
+    content_width = $list_content_info.width();     //单个技术员栏目所占的宽度
+    content_margin = parseInt($list_content_info.css("margin"));    //技术员栏目的边框值
+    content_total_height = content_height + content_margin * 2;  //一个技术员栏目所占的实际高度
+    content_total_width = content_width + content_margin * 2;  //一个技术员栏目所占的实际高度
+    content_list_num = $list_content_info.length;            //技术员栏目的总个数
+    content_inner_top = parseInt($list_content_inner.css("top"));      //技术员栏目外部容器的顶部偏移量
+    content_inner_width = $list_content_inner.width();  //技术员栏目外部容器的当前宽度
+    content_row_num = Math.ceil(content_list_num * content_total_width / content_inner_width);
+    content_row_current = Math.round(-content_inner_top / content_total_height);  //当前显示的是第几行
+    if(status == 0){
+        if (!$list_content_inner.is(":animated")) {
+            if (content_row_current == 0) {
+            }
+            else if (content_row_current == 1) {
+                $list_content_inner.animate({top: "+=" + content_total_height}, 1000, "swing");
+            }
+            else {
+                $list_content_inner.animate({top: "+=" + content_total_height * 2}, 1000, "swing");
+            }
+        }
+    }
+    if(status == 1){
+        if (!$list_content_inner.is(":animated")) {
+            if (content_row_num - content_row_current <= 2) {
+
+            }
+            else if (content_row_num - content_row_current == 3) {
+                $list_content_inner.animate({top: "-=" + content_total_height}, 1000, "swing");
+            }
+            else {
+                $list_content_inner.animate({top: "-=" + content_total_height * 2}, 1000, "swing");
+            }
+        }
+    }
+}
