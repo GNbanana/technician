@@ -1,27 +1,22 @@
 [
   {
-    "year": "2014",
-    "info": {
-      "id":"1",
-      "name": "熊思宇",
-      "image1": "xiongsiyu.png",
-      "image2": "4.jpg",
-      "image3": "4.ipg",
-      "grade": "2014级",
-      "mote": "人生就是如此，你以为已经从一个漩涡逃离，其实另外一个漩涡就在你的脚下。用力蹬一脚，就进去了。所以，不需要对生活太用力，心会带着我们去该去的地方。",
-      "teacher": "某某某"
-    }
+    "id":1,
+    "name": "熊思宇",
+    "image1": "xiongsiyu.png",
+    "image2": "4.png",
+    "image3": "4.png",
+    "grade": "2014级",
+    "mote": "人生就是如此，你以为已经从一个漩涡逃离，其实另外一个漩涡就在你的脚下。用力蹬一脚，就进去了。所以，不需要对生活太用力，心会带着我们去该去的地方。",
+    "teacher": "某某某"
   },
   {
-    "year": "2015",
-    "info": {
-      "name": "null",
-      "image1": "null",
-      "image2": "null",
-      "image3": "null",
-      "grade": "null",
-      "mote": "null",
-      "teacher": "null"
-    }
+    "id":2,
+    "name": "施小楠",
+    "image1": "xiongsiyu.png",
+    "image2": "4.png",
+    "image3": "4.png",
+    "grade": "2014级",
+    "mote": "人生就是如此，你以为已经从一个漩涡逃离，其实另外一个漩涡就在你的脚下。用力蹬一脚，就进去了。所以，不需要对生活太用力，心会带着我们去该去的地方。",
+    "teacher": "某某某"
   }
 ]

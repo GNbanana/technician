@@ -52,11 +52,27 @@ $(function () {
         $(".top_image_div ").height(top_image_height);
 
         /*调整技术员列表直接顶部对齐上端*/
-        $(".list_content_inner").animate({"top":"0px"},1500,"swing");
+        $(".list_content_inner").animate({"top": "0px"}, 1500, "swing");
     });
     /*鼠标单击技术员列表的动画*/
     $(".list_content_info").click(function () {
         var window_width = $(window).width();
+        dataid = $(this).attr("dataid");
+        $.getJSON("techInfo.json", function (data) {
+            $full_screen_tec = $(".full_screen_content")
+            $.each (data,function (index,info) {
+                if(info["id"] == dataid){
+                    image_path = "images/"+info["image2"];
+                    $full_screen_tec.find("img").attr("src", image_path).end()
+                        .find(".full_screen_tech_info p:nth-child(1)").html(info["name"]).end()
+                        .find(".full_screen_tech_info p:nth-child(2)").html(info["grade"]).end()
+                        .find(".full_screen_mote span").html(info["mote"]).end()
+                        .find(".full_screen_teacher span:nth-child(2)").html(info["teacher"]);
+                    return false;
+                }
+            })
+
+        })
         $(".full_screen_techinfo").css("display", "block").animate({opacity: "1"}, 500)/*控制全屏的出现*/
             .delay(500)
 
@@ -122,7 +138,6 @@ $(function () {
     })
 
 
-
 })
 /*改变屏幕大小时，重新刷新顶部的效果*/
 function flashTopCover() {
@@ -161,7 +176,7 @@ function content_list_scroll(status) {
     content_inner_width = $list_content_inner.width();  //技术员栏目外部容器的当前宽度
     content_row_num = Math.ceil(content_list_num * content_total_width / content_inner_width);
     content_row_current = Math.round(-content_inner_top / content_total_height);  //当前显示的是第几行
-    if(status == 0){
+    if (status == 0) {
         if (!$list_content_inner.is(":animated")) {
             if (content_row_current == 0) {
             }
@@ -173,7 +188,7 @@ function content_list_scroll(status) {
             }
         }
     }
-    if(status == 1){
+    if (status == 1) {
         if (!$list_content_inner.is(":animated")) {
             if (content_row_num - content_row_current <= 2) {
 
