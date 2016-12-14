@@ -60,9 +60,12 @@ $(function () {
         dataid = $(this).attr("dataid");
         $.getJSON("techInfo.json", function (data) {
             $full_screen_tec = $(".full_screen_content")
-            $.each (data,function (index,info) {
-                if(info["id"] == dataid){
-                    image_path = "images/"+info["image2"];
+            $.each(data, function (index, info) {
+                if (info["id"] == dataid) {
+                    if (window_width > 450)
+                        image_path = "images/" + info["image2"];
+                    else
+                        image_path = "images/" + info["image3"];
                     $full_screen_tec.find("img").attr("src", image_path).end()
                         .find(".full_screen_tech_info p:nth-child(1)").html(info["name"]).end()
                         .find(".full_screen_tech_info p:nth-child(2)").html(info["grade"]).end()
@@ -100,6 +103,16 @@ $(function () {
             $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
         }
     });
+    /*在搜索框中查找技术员*/
+    $(".search_box input").keydown(function (event) {
+        if (event.keyCode == 13) {
+            input_value = $(this).val();
+            if (input_value != "") {
+                console.log(input_value);
+                $("div:contains(" + input_value + ")").closest(".list_content_info").triggerHandler("click");
+            }
+        }
+    })
     /*全屏后点击右上角就退出全屏*/
     $(".close_full_screen").click(function () {
         var window_width = $(window).width();
