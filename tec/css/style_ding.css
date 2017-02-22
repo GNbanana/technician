@@ -51,23 +51,34 @@ body {
 .search_box {
     height: 295px;
 }
-
+.search_box .search_box_content{
+    position: relative;
+    top: 48%;
+    height: 45px;
+}
 .search_box input {
     display: block;
     height: 45px;
     width: 265px;
-    border: 4px solid #626262;
+    border: 2px solid #626262;
     border-radius: 15px;
     margin: 0px auto;
     background-color: #e1e0e0;
     text-align: center;
     font-size: 20px;
     color: #909090;
-    outline: medium; /*消除点击时出现边框*/
+    opacity:0.6;
     position: relative;
-    top: 48%;
+    outline: medium; /*消除点击时出现边框*/
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
-
+.search_box input:hover{
+    opacity:1;
+}
 .list_head {
     height: 420px;
     width: 85%;
@@ -139,6 +150,16 @@ body {
     -webkit-box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
     -moz-box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
     box-shadow: 2px 1px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.list_content_info:hover{
+    -webkit-box-shadow: 5px 5px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
+    -moz-box-shadow: 5px 5px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
+    box-shadow: 5px 5px 4px #cbcaca, -0.5px -0.5px 2px #cbcaca;
 }
 
 .list_content_info .person_img {
@@ -156,6 +177,7 @@ body {
 }
 
 .list_content_info .person_name {
+    color: rgb(56, 56, 56);
     width: 30px;
     font-size: 23px;
     line-height: 25px;
@@ -399,6 +421,8 @@ body {
     bottom: 5px;
     line-height: 20px;
     font-size: 16px;
+    text-align:justify;
+    text-justify:inter-ideograph
 }
 
 .full_screen_teacher {
@@ -515,6 +539,7 @@ body {
         -o-transition: all 0.5s;
         transition: all 0.5s;
     }
+
 
     .list_content_info .person_name {
         width: 18px;

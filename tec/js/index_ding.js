@@ -103,12 +103,21 @@ $(function () {
             $('.close_full_screen div:nth-child(2)').delay(200).animate({height: close_animate_length}, 500);
         }
     });
+
+    /*当输入框获取焦点时输入框变长*/
+    $(".search_box input").bind("focus",function () {
+        $(this).animate({top:"3px",height:"41px",width:"300px","border-radius":"40px"},300);
+    })
+    /*当输入框失去焦点时输入框复原*/
+    $(".search_box input").bind("blur",function () {
+        $(this).animate({top:"0px",height:"45px",width:"265px","border-radius":"15px"},300);
+    })
     /*在搜索框中查找技术员*/
     $(".search_box input").keydown(function (event) {
         if (event.keyCode == 13) {
+            console.log("hellsdfbsdo");
             input_value = $(this).val();
             if (input_value != "") {
-                console.log(input_value);
                 $("div:contains(" + input_value + ")").closest(".list_content_info").triggerHandler("click");
             }
         }
