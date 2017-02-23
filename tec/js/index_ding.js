@@ -60,26 +60,23 @@ $(function () {
         user_name = $(this).attr("data-name");
 
         //加载具体的信息到指定的位置
-        json_path = "/feiyangtech/"+user_name+"/info.json";
-        console.log(json_path);
-        $.getJSON(json_path, function (data) {
+        json_path = "./feiyangtech/"+user_name+"/info.json";
+         $.getJSON(json_path, function (data) {
             $full_screen_tec = $(".full_screen_content")
             if (window_width > 450) {
-                // image_path = "../".concat(user_name,"/",user_name,"_vertical.jpg");
-
-                image_path = "../" + user_name +"/" +user_name + "_vertical.jpg";
-                console.log(image_path);
-            }
+                image_path = "./feiyangtech/" + user_name +"/" +user_name + "_vertical.jpg";
+             }
             else
-                image_path = "../" + user_name +"/" +user_name + "_horizontal.jpg";
-            // $full_screen_tec.find("img").attr("src", image_path).end()
-            //     .find(".full_screen_tech_info p:nth-child(1)").html(data["name"]).end()
-            //     .find(".full_screen_tech_info p:nth-child(2)").html(data["grade"]).end()
-            //     .find(".full_screen_mote span").data(info["mote"]).end()
-            //     .find(".full_screen_teacher span:nth-child(2)").html(data["teacher"]);
-            // return false;
+                image_path = "./feiyangtech/" + user_name +"/" +user_name + "_horizontal.jpg";
+            $full_screen_tec.find("img").attr("src", image_path).end()
+                .find(".full_screen_tech_info p:nth-child(1)").html(data["name"]).end()
+                .find(".full_screen_tech_info p:nth-child(2)").html(data["grade"]).end()
+                .find(".full_screen_mote span").html(data["mote"]).end()
+                .find(".full_screen_teacher span:nth-child(2)").html(data["teacher"]);
+            return false;
 
         })
+
         $(".full_screen_techinfo").css("display", "block").animate({opacity: "1"}, 500)/*控制全屏的出现*/
             .delay(500)
 
@@ -146,6 +143,12 @@ $(function () {
             $(".full_screen_tech_info p,.full_screen_teacher span").animate({top: "6px", opacity: "0"}, 300);
             $(".full_screen_mote span").animate({bottom: "-2px", opacity: "0"}, 300);
         }
+        $full_screen_tec = $(".full_screen_content");
+        $full_screen_tec.find("img").attr("src", "").end()
+            .find(".full_screen_tech_info p:nth-child(1)").html("").end()
+            .find(".full_screen_tech_info p:nth-child(2)").html("").end()
+            .find(".full_screen_mote span").html("").end()
+            .find(".full_screen_teacher span:nth-child(2)").html("");
 
     })
     /*当按键盘esc时退出全屏*/
