@@ -57,23 +57,27 @@ $(function () {
     /*鼠标单击技术员列表的动画*/
     $(".list_content_info").click(function () {
         var window_width = $(window).width();
-        dataid = $(this).attr("dataid");
-        $.getJSON("techInfo.json", function (data) {
+        user_name = $(this).attr("data-name");
+
+        //加载具体的信息到指定的位置
+        json_path = "/feiyangtech/"+user_name+"/info.json";
+        console.log(json_path);
+        $.getJSON(json_path, function (data) {
             $full_screen_tec = $(".full_screen_content")
-            $.each(data, function (index, info) {
-                if (info["id"] == dataid) {
-                    if (window_width > 450)
-                        image_path = "images/" + info["image2"];
-                    else
-                        image_path = "images/" + info["image3"];
-                    $full_screen_tec.find("img").attr("src", image_path).end()
-                        .find(".full_screen_tech_info p:nth-child(1)").html(info["name"]).end()
-                        .find(".full_screen_tech_info p:nth-child(2)").html(info["grade"]).end()
-                        .find(".full_screen_mote span").html(info["mote"]).end()
-                        .find(".full_screen_teacher span:nth-child(2)").html(info["teacher"]);
-                    return false;
-                }
-            })
+            if (window_width > 450) {
+                // image_path = "../".concat(user_name,"/",user_name,"_vertical.jpg");
+
+                image_path = "../" + user_name +"/" +user_name + "_vertical.jpg";
+                console.log(image_path);
+            }
+            else
+                image_path = "../" + user_name +"/" +user_name + "_horizontal.jpg";
+            // $full_screen_tec.find("img").attr("src", image_path).end()
+            //     .find(".full_screen_tech_info p:nth-child(1)").html(data["name"]).end()
+            //     .find(".full_screen_tech_info p:nth-child(2)").html(data["grade"]).end()
+            //     .find(".full_screen_mote span").data(info["mote"]).end()
+            //     .find(".full_screen_teacher span:nth-child(2)").html(data["teacher"]);
+            // return false;
 
         })
         $(".full_screen_techinfo").css("display", "block").animate({opacity: "1"}, 500)/*控制全屏的出现*/
