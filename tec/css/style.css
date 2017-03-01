@@ -330,6 +330,10 @@ body {
     position: relative;
 }
 
+.pic{
+    overflow: hidden;
+}
+
 .pics_container {
     width: 90%;
     margin-left: auto;
