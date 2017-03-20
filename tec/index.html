@@ -1,64 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/component.css"/>
-    <script src="js/modernizr.custom.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/index.js"></script>
-    <script>
-        //loadmore
-        function showdiv(targetid, objN) {
-
-            var target = document.getElementById(targetid);
-            var clicktext = document.getElementById(objN)
-
-            if (target.style.display == "block") {
-                target.style.display = "none";
-                clicktext.innerText = "加载更多年份";
-
-
-            } else {
-                target.style.display = "block";
-                clicktext.innerText = '关闭';
-            }
-        }
-
-        function showdiv1(targetid, objN) {
-
-            var target1 = document.getElementById(targetid);
-            var clicktext1 = document.getElementById(objN)
-
-            if (target1.style.display == "block") {
-                target1.style.display = "none";
-                clicktext1.innerText = "查看所有本年照片";
-
-
-            } else {
-                target1.style.display = "block";
-                clicktext1.innerText = '关闭';
-            }
-        }
-
-        $(function () {
-            $(".yearslist a").click(function () {
-                var hr = $(this).attr("href");
-                var anh = $(hr).offset().top;
-                $("html,body").stop().animate({scrollTop: anh}, 2000);
-            })
-        })
-
-        $(function () {
-            $(".click").click(function () {
-                $("html,body").animate({scrollTop: 0}, 2000);
-            })
-        })
-
-
-    </script>
 </head>
 <body>
 <img id="top_image1">
@@ -130,7 +78,7 @@
                     <div class="person_img">
                         <img src="feiyangtech/gongna/gongna_horizontal.jpg">
                     </div>
-                    <div class="person_name">龚娜</div>
+                    <div class="person_name">巩娜</div>
                     <div class="person_year">2015</div>
                 </div>
                 <div class="list_content_info" data-name="huangchaoyangfan">
@@ -151,7 +99,7 @@
                     <div class="person_img">
                         <img src="feiyangtech/liaoshiyi/liaoshiyi_horizontal.jpg">
                     </div>
-                    <div class="person_name">廖石毅</div>
+                    <div class="person_name">廖时毅</div>
                     <div class="person_year">2015</div>
                 </div>
                 <div class="list_content_info" data-name="linjiawei">
@@ -274,323 +222,120 @@
             <div class="right_roll"></div>
         </div>
     </div>
+</div>
 
-    <div class="pic">
-        <div class="contect_banner">
-            <img src="images/Content_banner_pic.png" alt="">
-
-            <p id="contect1" type="button" onClick="showdiv1('contentid1','contect1')">查看所有本年照片</p>
+<div class="banner_div">
+    <div class="banner_img">
+        <div class="imgContent">
+            <div><img src="images/Content_banner_pic.png"></div>
+            <div class="smask"><img src="images/Content_banner_pic1.png"></div>
+            <div class="smask"><img src="images/Content_banner_pic2.png"></div>
         </div>
+    </div>
+    <div class="banner_button">
+        <div class="contectbutton" data-status="off">
+            <span class="banner_word">查看所有本年照片</span>
+            <span class="line_lt hah"></span>
+            <span class="line_top hah"></span>
+            <span class="line_rt hah"></span>
+            <span class="line_bot hah"></span>
+        </div>
+    </div>
+</div>
 
-        <div class="photo" id="tagContent">
-            <div class="tagContent selectTag" id="tagContent0">
-                <div id="grid-gallery" class="grid-gallery">
-                    <section class="grid-wrap">
-                        <ul class="grid">
-                            <li class="grid-sizer"></li>
-                            <!-- for Masonry column width -->
-                            <li>
-                                <figure>
-                                    <img src="images/1.png" alt="img01"/>
-                                    <figcaption>
-                                        <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
+<div class="container image_list">
+    <ul class="grid effect" id="grid">
+        <li>
+            <img src="images/1.png">
+            <div class="grid_text">
+                <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/2.png">
+            <div class="grid_text">
+                <p>美女你谁？</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/3.png">
+            <div class="grid_text">
+                <p>棒棒糖</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/4.png">
+            <div class="grid_text">
+                <p>会员大会上面坐在地上吃东西的楠哥</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/5.png">
+            <div class="grid_text">
+                <p>会员大会上的来占位置的刘裕拯</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/6.png">
+            <div class="grid_text">
+                <p>楠家师门</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/7.png">
+            <div class="grid_text">
+                <p>一抬相机他妈的全转过去了</p>
+                <p>2016.9</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/8.png">
+            <div class="grid_text">
+                <p>四月大修上的一排技术员</p>
+                <p>2016.4</p>
+            </div>
+        </li>
+        <li>
+            <img src="images/9.png">
+            <div class="grid_text">
+                <p>发呆的熊老板</p>
+                <p>2016.6</p>
+            </div>
+        </li>
+    </ul>
+</div>
 
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/2.png" alt="img02"/>
-                                    <figcaption>
-                                        <p>美女你谁？</p>
+<div class="loadMoreYear">
+    <button class="loadMoreYear_button">加载更多年份</button>
+</div>
 
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/3.png" alt="img03"/>
-                                    <figcaption>
-                                        <p>棒棒糖</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/4.png" alt="img04"/>
-                                    <figcaption>
-                                        <p>会员大会上面坐在地上吃东西的楠哥</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/5.png" alt="img05"/>
-                                    <figcaption>
-                                        <p>会员大会上的来占位置的刘裕拯</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/6.png" alt="img06"/>
-                                    <figcaption>
-                                        <p>楠家师门</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/7.png" alt="img01"/>
-                                    <figcaption>
-                                        <p>一抬相机他妈的全转过去了</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/8.png" alt="img02"/>
-                                    <figcaption>
-                                        <p>四月大修上的一排技术员</p>
-
-                                        <p>2016.4.</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/9.png" alt="img03"/>
-                                    <figcaption>
-                                        <p>发呆的熊老板</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/10.png" alt="img04"/>
-                                    <figcaption>
-                                        <p>神他妈？</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/10.png" alt="img04"/>
-                                    <figcaption>
-                                        <p>的合照？</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/10.png" alt="img04"/>
-                                    <figcaption>
-                                        <p>哈哈哈？</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/10.png" alt="img04"/>
-                                    <figcaption>
-                                        <p>呵呵？</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img src="images/10.png" alt="img04"/>
-                                    <figcaption>
-                                        <p>嘿嘿？</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                        </ul>
-                    </section>
-                    <!-- // grid-wrap -->
-                    <section class="slideshow">
-                        <ul>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>神他妈的合照。许曼、飞扬、田定、于宏洋</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/1.png" alt="img01"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>美女你谁？</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/2.png" alt="img02"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>棒棒糖</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/3.png" alt="img03"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>会员大会上面坐在地上吃东西的楠哥</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/4.png" alt="img04"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>会员大会上的来占位置的刘裕拯</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/5.png" alt="img05"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>楠家师门</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/6.png" alt="img06"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>一抬相机他妈的全转过去了</p>
-
-                                        <p>2016.9</p>
-                                    </figcaption>
-                                    <img src="images/7.png" alt="img01"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>四月大修上的一排技术员</p>
-
-                                        <p>2016.4.</p>
-                                    </figcaption>
-                                    <img src="images/8.png" alt="img02"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>发呆的熊老板</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                    <img src="images/9.png" alt="img03"/>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <figcaption>
-                                        <p>猜他们在拍的是谁？</p>
-
-                                        <p>2016.6</p>
-                                    </figcaption>
-                                    <img src="images/10.png" alt="img04"/>
-                                </figure>
-                            </li>
-                        </ul>
-                        <nav>
-                            <span class="icon nav-prev"><img src="images/pre.png"></span>
-                            <span class="icon nav-next"><img src="images/next.png"></span>
-                            <span class="icon nav-close"><img src="images/close.png"></span>
-                        </nav>
-                    </section>
-                    <!-- // slideshow -->
+<!--全屏信息栏-->
+<div class="full_screen_techinfo">
+    <div class="close_full_screen">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="full_screen_content">
+        <div class="full_screen_left">
+            <img src="">
+        </div>
+        <div class="full_screen_right">
+            <div class="full_screen_right_content">
+                <div class="full_screen_tech_info">
+                    <p></p>
+                    <p></p>
                 </div>
-                <!-- // grid-gallery -->
-            </div>
-
-            <div class="tagContent" id="tagContent1">
-
-            </div>
-            <div class="tagContent" id="tagContent2">
-
-            </div>
-        </div>
-        <div id="contentid" class="none">
-            <div class="yearslist">
-                <ul id=tags>
-                    <li class=selectTag><A onMouseover="selectTag('tagContent0',this)"
-                                           href="javascript:void(0)">2015</A></li>
-                    <li><A onMouseover="selectTag('tagContent1',this)" href="javascript:void(0)">2014</A></li>
-                    <li><A onMouseover="selectTag('tagContent2',this)" href="javascript:void(0)">2013</A></li>
-                </ul>
-            </div>
-            <a class="line"></a>
-        </div>
-    </div>
-    <div class="loadmore">
-        <a class="load_button" id="contect" type="button" onClick="showdiv('contentid','contect')">加载更多年份</a>
-    </div>
-
-    <!--全屏信息栏-->
-    <div class="full_screen_techinfo">
-        <div class="close_full_screen">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="full_screen_content">
-            <div class="full_screen_left">
-                <img src="">
-            </div>
-            <div class="full_screen_right">
-                <div class="full_screen_right_content">
-                    <div class="full_screen_tech_info">
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div class="full_screen_mote">
-                            <span></span>
-                    </div>
-                    <div class="full_screen_teacher">
-                        <span>师承：</span><span></span>
-                    </div>
+                <div class="full_screen_mote">
+                    <span></span>
+                </div>
+                <div class="full_screen_teacher">
+                    <span>师承：</span><span></span>
                 </div>
             </div>
         </div>
@@ -604,28 +349,21 @@
     </div>
 </div>
 
-<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/jquery.js"></script>
+
+<script src="js/modernizr.custom.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.js"></script>
 <script src="js/classie.js"></script>
-<script src="js/cbpgridgallery.js"></script>
+<script src="js/AnimOnScroll.js"></script>
+
 <script>
-    new CBPGridGallery(document.getElementById('grid-gallery'));
+    new AnimOnScroll(document.getElementById('grid'), {
+        minDuration: 0.4,
+        maxDuration: 0.7,
+        viewportFactor: 0.2
+    });
 </script>
-<script type="text/javascript">
-    function selectTag(showContent, selfObj) {
-        // 操作标签
-        var tag = document.getElementById("tags").getElementsByTagName("li");
-        var taglength = tag.length;
-        for (i = 0; i < taglength; i++) {
-            tag[i].className = "";
-        }
-        selfObj.parentNode.className = "selectTag";
-        // 操作内容
-        for (i = 0; j = document.getElementById("tagContent" + i); i++) {
-            j.style.display = "none";
-        }
-        document.getElementById(showContent).style.display = "block";
-    }
-</script>
+<script src="js/index.js" charset="utf-8"></script>
 </body>
 </html>
