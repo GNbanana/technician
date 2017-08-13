@@ -6,208 +6,99 @@ body {
 	background: #e1e0e0;
 }
 
-/* 查看所有按钮 */
-.banner_button{
-	position: absolute;
-	z-index: 100;
-	width: 100%;
-	height: 560px;
-}
-
-.contectbutton {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 55px;
-	width: 360px;
-	margin-left: -180px;
-	margin-top: -70px;
-	line-height: 50px;
-	color: white;
-	font-size: 1.6em;
-	font-weight: 600;
-	letter-spacing: 0.3em;
-	font-family: "Microsoft YaHei UI";
-	border: white solid 4px;
-	cursor: pointer;
-	text-align: center;
-}
-
-.hah{
-	transition: all .4s;
-}
-.line_lt{
-	height:0;
-	width:0;
-	background: #fff;
-	position: absolute;
-	top:-280px;
-	left:-4px;
-}
-.line_top{
-	height:0;
-	width:0;
-	background: #fff;
-	position: absolute;
-	left: 550px;
-	top:-4px;
-}
-.line_rt{
-	height:0;
-	width:0;
-	background: #fff;
-	position: absolute;
-	top:260px;
-	right:-4px;
-}
-.line_bot{
-	height:0;
-	width:0;
-	background: #fff;
-	position: absolute;
-	left:-280px;
-	bottom:-4px;
-}
-.contectbutton:hover .line_bot{
-	height:4px;
-	width:50px;
-	transform: translate(280px);
-}
-.contectbutton:hover .line_rt{
-	height:50px;
-	width:4px;
-	transform: translateY(-260px);
-}
-.contectbutton:hover .line_top{
-	height:4px;
-	width:50px;
-	transform: translate(-260px);
-}
-.contectbutton:hover .line_lt{
-	height:50px;
-	width:4px;
-	transform: translateY(280px);
-}
-
-
-/* 瀑布流 */
-.container{
-	padding: 100px 0;
-	width: 100%;
-	height:auto;
-	overflow: hidden;
-	background-color: #000000;
-}
-
-.grid {
-	width: 80%;
-	list-style: none;
-	margin: 0 auto;
-	padding: 0;
-}
-
-.grid li {
-	display: block;
-	float: left;
-	padding: 15px;
-	width: 25%;
-	opacity: 0;
-}
-
-.grid li.shown,
-.no-js .grid li,
-.no-cssanimations .grid li {
-	opacity: 1;
-}
-
-.grid li img {
-	outline: none;
-	border: none;
-	display: block;
-	max-width: 100%;
-	border-radius: 8px 8px 0 0;
-}
-
-.grid.effect li.animate {
-	-webkit-transform: translateY(200px);
-	transform: translateY(200px);
-	-webkit-animation: moveUp 0.65s ease forwards;
-	animation: moveUp 0.65s ease forwards;
-}
-
-@-webkit-keyframes moveUp {
-	0% { }
-	100% { -webkit-transform: translateY(0); opacity: 1; }
-}
-
-@keyframes moveUp {
-	0% { }
-	100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
-}
-
-.grid_text{
-	padding: 2px 10px;
-	background-color: #fff;
-	border-radius: 0 0 8px 8px;
-}
-.grid_text p{
-	display: block;
-	font-size: 12px;
-	letter-spacing: 0.2em;
-	margin: 5px;
-}
-
-/* 加载本年所有照片 */
 
 /* 轮播图 */
-.banner_img {
+.banner_div{
 	width: 100%;
-	height:auto;
-	/*position: fixed;*/
-	z-index: -100;
+	height: auto;
+	position: relative;
+	background-color:  #e1e0e0;
+	text-align: center;
 }
 
 .imgContent {
 	width: 100%;
 	height:auto;
 }
-.imgContent DIV {
+
+.imgContent div {
 	position: absolute;
 }
+
 .imgContent .smask {
 	z-index: -1;
 }
-.imgContent IMG {
+.imgContent div img {
 	width: 100%;
+	height: 100%;
 	border: 0;
 }
 
-.banner_div{
-	width: 100%;
-	height: 560px;
+
+
+/* 查看所有按钮 */
+.banner_button{
+	position: absolute;
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	height: 55px;
+	width: 360px;
+	margin-left: -180px;
+	margin-top: -30px;
+	line-height: 50px;
+	color: white;
+	font-size: 1.6em;
+	font-weight: 600;
+	letter-spacing: 0.3em;
+	border: white solid 4px;
+	cursor: pointer;
+	text-align: center;
+}
+
+
+/* 瀑布流 */
+.waterFull{
 	position: relative;
-	background-color:  #e1e0e0;
-}
-
-@media screen and (max-width: 1100px) {
-	.grid li {
-		width: 33.3%;
-	}
-}
-
-
-@media screen and (max-width: 800px) {
-	.grid li {
-		width: 50%;
-	}
+	background-color: #000000;
+	padding: 100px 0;
+	width: 100%;
+	height: auto;
+	opacity: 0;
+	overflow-x: hidden;
 
 }
 
-@media screen and (max-width: 400px) {
-	.grid li {
-		width: 100%;
-	}
+.waterFull div {
+	position: relative;
 }
+.waterFull div div {
+
+	background-color: #fff;
+	position: absolute;
+	margin: 20px;
+	border-radius: 8px;
+	width: 240px;
+	-webkit-transition: all .7s ease-out .1s;
+	-moz-transition: all .7s ease-out .1s;
+	-o-transition: all .7s ease-out .1s;
+	transition: all .7s ease-out .1s
+}
+
+
+.waterFull div div img{
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	border-radius: 8px 8px 0 0;
+}
+
+.waterFull div div p{
+	padding: 0 10px 10px 10px;
+	font-size: 12px;
+	letter-spacing: 0.2em;
+}
+
 
 
 
@@ -246,7 +137,6 @@ body {
 .footer {
 	clear: both;
 	width: 100%;
-	height: 300px;
 	background: black;
 	text-align: center;
 	z-index: 100;
@@ -256,7 +146,7 @@ body {
 	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 50px;
+	padding: 50px 0;
 }
 
 .footer_back p {
@@ -266,19 +156,11 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-	.banner_div{
-		height: 500px;
-	}
-
 	.banner_button{
-		height: 500px;
-	}
-
-	.contectbutton {
 		width: 300px;
 		height: 56px;
 		margin-left: -150px;
-		margin-top: -120px;
+		margin-top: -28px;
 	}
 
 	.loadMoreYear_button {
@@ -295,27 +177,16 @@ body {
 	}
 
 	.footer_back {
-		padding-top: 40px;
+		padding: 40px 0;
 	}
 
-	.line_top{
-		left: 450px;
-	}
 }
 
 @media screen and (max-width: 768px) {
-	.banner_div{
-		height: 350px;
-	}
-
 	.banner_button{
-		height: 400px;
-	}
-
-	.contectbutton {
 		width: 240px;
 		height: 46px;
-		margin-top: -100px;
+		margin-top: -23px;
 		margin-left: -120px;
 		line-height: 40px;
 		font-size: 1.2em;
@@ -335,61 +206,18 @@ body {
 		height: 280px;
 	}
 
-
-	.footer {
-		height: 260px;
-	}
-
 	.footer_back img {
 		width: 100px;
 		height: 100px;
 	}
 
-	.line_lt{
-		left:-3px;
-	}
-	.line_top{
-		left: 400px;
-		top:-3px;
-	}
-	.line_rt{
-		right:-3px;
-	}
-	.line_bot{
-		bottom:-3px;
-	}
-
-	.contectbutton:hover .line_bot{
-		height:3px;
-		width:46px;
-	}
-	.contectbutton:hover .line_rt{
-		height:42px;
-		width:3px;
-	}
-	.contectbutton:hover .line_top{
-		height:3px;
-		width:46px;
-	}
-	.contectbutton:hover .line_lt{
-		height:42px;
-		width:3px;
-	}
 }
 
 @media screen and (max-width: 520px) {
-	.banner_div{
-		height: 260px;
-	}
-
 	.banner_button{
-		height: 260px;
-	}
-
-	.contectbutton {
 		width: 200px;
 		height: 35px;
-		margin-top: -70px;
+		margin-top: -17px;
 		margin-left: -100px;
 		line-height: 30px;
 		font-size: 1.1em;
@@ -412,13 +240,8 @@ body {
 		height: 220px;
 	}
 
-
-	.footer {
-		height: 200px;
-	}
-
 	.footer_back {
-		padding-top: 30px;
+		padding: 30px 0;
 	}
 
 	.footer_back img {
@@ -432,111 +255,14 @@ body {
 		font-size: 0.8em;
 		color: #ccc;
 	}
-
-	.line_lt{
-		left:-2px;
-	}
-	.line_top{
-		left: 400px;
-		top:-2px;
-	}
-	.line_rt{
-		right:-2px;
-	}
-	.line_bot{
-		bottom:-2px;
-	}
-
-	.contectbutton:hover .line_bot{
-		height:2px;
-		width:35px;
-	}
-	.contectbutton:hover .line_rt{
-		height:33px;
-		width:2px;
-	}
-	.contectbutton:hover .line_top{
-		height:2px;
-		width:35px;
-	}
-	.contectbutton:hover .line_lt{
-		height:28px;
-		width:1px;
-	}
-}
-
-@media screen and (max-width: 400px) {
-	.banner_div {
-		height: 200px;
-	}
-
-	.banner_button {
-		height: 200px;
-	}
-
-	.contectbutton {
-		width: 180px;
-		height: 35px;
-		margin-top: -50px;
-		margin-left: -90px;
-		line-height: 35px;
-		font-size: 1.0em;
-		letter-spacing: 0.1em;
-		border: white solid 1px;
-		font-weight: 300;
-	}
-
-	.line_lt{
-		left:-1px;
-	}
-	.line_top{
-		left: 400px;
-		top:-1px;
-	}
-	.line_rt{
-		right:-1px;
-	}
-	.line_bot{
-		bottom:-1px;
-	}
-
-	.contectbutton:hover .line_bot{
-		height: 1px;
-		width:35px;
-	}
-	.contectbutton:hover .line_rt{
-		height:35px;
-		width:1px;
-	}
-	.contectbutton:hover .line_top{
-		height:1px;
-		width:35px;
-	}
-	.contectbutton:hover .line_lt{
-		height:35px;
-		width:1px;
-	}
 }
 
 @media screen and (max-width: 320px) {
-	.banner_img{
-		/*position: absolute;*/
-		z-index: 0;
-	}
-
-	.banner_div{
-		height: 100px;
-	}
-
 	.banner_button{
-		height: 100px;
-	}
-
-	.contectbutton {
 		width: 140px;
 		height: 28px;
 		margin-left: -70px;
-		margin-top: -14px;
+		margin-top: -10px;
 		line-height: 28px;
 		font-size: 0.8em;
 		letter-spacing: 0.2em;
@@ -558,12 +284,8 @@ body {
 		height: 150px;
 	}
 
-	.footer {
-		height: 150px;
-	}
-
 	.footer_back {
-		padding-top: 30px;
+		padding: 30px 0;
 	}
 
 	.footer_back img {
@@ -578,37 +300,9 @@ body {
 		color: #ccc;
 	}
 
-	.line_lt{
-		left:-1px;
-	}
-	.line_top{
-		left: 350px;
-		top:-1px;
-	}
-	.line_rt{
-		right:-1px;
-	}
-	.line_bot{
-		bottom:-1px;
-	}
-
-	.contectbutton:hover .line_bot{
-		height:1px;
-		width:28px;
-	}
-	.contectbutton:hover .line_rt{
-		height:28px;
-		width:1px;
-	}
-	.contectbutton:hover .line_top{
-		height:1px;
-		width:28px;
-	}
-	.contectbutton:hover .line_lt{
-		height:28px;
-		width:1px;
-	}
 }
 
 
-
+.tec2015, .tec2016{
+	background-color: #000;
+}

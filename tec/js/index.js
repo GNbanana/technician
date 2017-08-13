@@ -208,10 +208,10 @@ function content_list_scroll(status) {
             if (content_row_current == 0) {
             }
             else if (content_row_current == 1) {
-                $list_content_inner.animate({top: "+=" + content_total_height}, 1000, "swing");
+                $list_content_inner.animate({top: "+=" + content_total_height}, 100, "swing");
             }
             else {
-                $list_content_inner.animate({top: "+=" + content_total_height * 2}, 1000, "swing");
+                $list_content_inner.animate({top: "+=" + content_total_height * 2}, 100, "swing");
             }
         }
     }
@@ -221,18 +221,19 @@ function content_list_scroll(status) {
 
             }
             else if (content_row_num - content_row_current == 3) {
-                $list_content_inner.animate({top: "-=" + content_total_height}, 1000, "swing");
+                $list_content_inner.animate({top: "-=" + content_total_height}, 200, "swing");
             }
             else {
-                $list_content_inner.animate({top: "-=" + content_total_height * 2}, 1000, "swing");
+                $list_content_inner.animate({top: "-=" + content_total_height * 2}, 200, "swing");
             }
         }
     }
 }
 
-/*娜娜部分js代码*/
-/*  轮播图  */
+
+//轮播图
 jQuery(function ($) {
+
     var index = 0;
     var maximg = 3;
 
@@ -240,35 +241,161 @@ jQuery(function ($) {
     var MyTime = setInterval(function () {
         ShowjQueryFlash(index);
         index = (index+1)%maximg;
-    }, 3000);
+    }, 5000);
 
-    $(".image_list").css({"display":"none"});
-    /*点击控制所有照片的出现和隐藏*/
-    $(".contectbutton").click(function () {
-        /*控制列表部分的滑动出现与消失*/
-        $that = $(this);
-        $imageList = $that.closest('.banner_div').next(".image_list");
-        if(!$imageList.is(':animated')){
-            $imageList.slideToggle(500);
-            // /*颜色改变*/
-            if($that.attr("data-status") === "off"){
-                $that.find(".banner_word").html("收起所有本年照片");
-                $that.attr({"data-status":"on"});
-                $imageList.css("position","relative");
-                $that.closest('.banner_div').css({"background-color":"black"});
-            }
-            else{
-                $that.find(".banner_word").html("查看所有本年照片");
-                $that.attr({"data-status":"off"});
-                setTimeout(function () {
-                    $that.closest('.banner_div').css({"background-color":"#e1e0e0"},100);
-                },500);
-                // $that.closest('.banner_div').animate({"background-color":"#e1e0e0"}).delay(500);
-            }
-        }
+    //banner调整
+    $(function () {
+        refresh_banner();
+
+        $(window).resize(function () {
+            refresh_banner();
+        });
     });
+
+    function ShowjQueryFlash(i) {
+        for (var j=1; j<=2; j++) {
+            (function(j) {
+                $("#imgContent" + j + " div").eq(i).animate({opacity: 1}, 500).css({"z-index": "1"})
+                    .siblings().animate({opacity: 0}, 1000).css({"z-index": "0"});
+            })(j);
+        }
+
+    }
+
+    //设置banner宽高
+    function refresh_banner(){
+        var window_width = $(window).width();
+        var banner_img = $(".banner_img img");
+
+        banner_img.height(window_width * (852 / 2064));
+        banner_img.width(window_width);
+
+        var banner_div_height =banner_img.height();
+        var banner_div_width = window_width;
+
+        $(".banner_div ").height(banner_div_height);
+        $(".banner_div ").width(banner_div_width);
+    }
 });
-function ShowjQueryFlash(i) {
-    $(".imgContent div").eq(i).animate({opacity: 1}, 1000).css({"z-index": "1"})
-        .siblings().animate({opacity: 0}, 1000).css({"z-index": "0"});
+
+
+
+
+
+
+//瀑布流
+document.getElementsByClassName = function(className, tag, elm) {
+    var testClass = new RegExp("(^|\s)" + className + "(\s|$)");
+    var tag = tag || "*";
+    var elm = elm || document;
+    var elements = (tag == "*" && elm.all)? elm.all : elm.getElementsByTagName(tag);
+    var returnElements = [];
+    var current;
+    var length = elements.length;
+    for(var i=0; i<length; i++){
+        current = elements[i];
+        if(testClass.test(current.className)){
+            returnElements.push(current);
+        }
+    }
+    return returnElements;
 }
+
+
+function show() {
+    for (var j=1; j<=2; j++) {
+        (function(j) {
+            var margin = 35;
+            var boxes = document.getElementsByClassName('img'+j+'Show');
+            var con = document.getElementsByClassName('container'+j+'Show');
+
+            var boxWidth = boxes[0].offsetWidth+margin;
+
+            var columnHeight=[];
+            var bodyWidth = document.body.offsetWidth;
+            var n = parseInt(bodyWidth * 0.85 / boxWidth);
+            var columnNum = n==0?1:n;
+            var bodyLeft = bodyWidth>=boxWidth?bodyWidth-columnNum*boxWidth:0;
+            con[0].style.left = parseInt(bodyLeft/2)-margin/2-15+'px';
+            for (var i = 0,l=boxes.length; i <l ; i++) {
+                if (i<columnNum) {
+                    columnHeight[i]=boxes[i].offsetHeight+margin;
+                    boxes[i].style.top = 0;
+                    boxes[i].style.left = i*boxWidth+margin+'px';
+                } else{
+                    var innsertColumn = min(columnHeight),
+                        imgHeight = boxes[i].offsetHeight+margin;
+                    boxes[i].style.top = columnHeight[innsertColumn]+'px';
+                    boxes[i].style.left = innsertColumn*boxWidth+margin+'px';
+                    columnHeight[innsertColumn] +=imgHeight;
+                }
+
+            }
+
+            $(".container"+j+'Show').height(columnHeight[innsertColumn]);
+        })(j);
+    }
+
+}
+
+
+function min (heightAarry) {
+    var minColumn = 0;
+    var minHeight = heightAarry[minColumn];
+    for (var i = 1,len=heightAarry.length; i < len; i++) {
+        var temp = heightAarry[i];
+        if (temp < minHeight) {
+            minColumn = i;
+            minHeight = temp;
+        }
+    }
+
+    return minColumn;
+}
+
+window.onload = function(){show();};
+window.onresize = function(){show();};
+
+
+//隐藏显示按钮
+$(function(){
+    for (var i=1; i<=2; i++) {
+        (function(i) {
+            var waterFull = $("#waterFull"+i);
+            waterFull.hide();
+            $("#banner_button"+i).click(function(){
+                var waterFull = $("#waterFull"+i);
+
+                if(waterFull.is(":hidden")){
+                    waterFull.css("opacity","1");
+                    waterFull.show("50");
+                    $("#banner_button"+i).text("收起所有本年照片");
+                    $("#banner_div"+i).css("background-color","#000");
+                    show();
+                }
+                else{
+                    waterFull.hide();
+                    $("#banner_button" + i).text("查看所有本年照片");
+                    $("#banner_div" + i).css("background-color","#e1e0e0");
+                }
+            });
+        })(i);
+    }
+})
+
+//加载更多年份
+$(function(){
+    for(var i=1;i<=2;i++){
+        (function(i){
+            var tec = $("#tec"+i);
+            tec.hide();
+            $("#loadMoreYear_button"+i).click(function(){
+                var tec = $("#tec"+i);
+                tec.show("50");
+            });
+        })(i);
+    }
+})
+
+
+
